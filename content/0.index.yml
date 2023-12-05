@@ -1,0 +1,80 @@
+title: Nuxt UI Pro - SaaS template
+description: Nuxt UI Pro is a collection of premium components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes.
+navigation: false
+hero:
+  title: Build your SaaS in seconds
+  description: This template demonstrates most of Nuxt UI Pro's components. It's a great starting point to build your own SaaS.
+  screenshot:
+    src: https://volta.net/home/screenshot.png
+    alt: App screenshot
+    width: 1216
+    height: 684
+  links:
+    - label: Get started
+      to: '#features'
+      size: xl
+      color: primary
+      icon: i-heroicons-arrow-right-20-solid
+      trailing: true
+    - label: Documentation
+      size: xl
+      color: gray
+      to: https://ui.nuxt.com/pro
+      target: _blank
+features:
+  title: Why choose our service?
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  items:
+    - title: Easy to use
+      description: Id laborum laboris duis nostrud excepteur ut velit nulla magna Lorem proident non.
+      icon: i-heroicons-cog
+    - title: Reliable
+      description: Magna Lorem ex cillum fugiat ad enim aute irure sit duis minim.
+      icon: i-heroicons-check
+    - title: Secure
+      description: Proident nostrud excepteur sint ut culpa consectetur aute adipisicing non anim ullamco.
+      icon: i-heroicons-lock-closed
+    - title: Fast
+      description: Qui reprehenderit nostrud dolore nisi ad fugiat labore eiusmod sint aliquip nisi voluptate.
+      icon: i-heroicons-rocket-launch
+    - title: Affordable
+      description: Reprehenderit fugiat elit in do ipsum ut pariatur.
+      icon: i-heroicons-currency-dollar
+    - title: Scalable
+      description: Lorem deserunt et eiusmod. Ea in consectetur minim officia ullamco enim deserunt est.
+      icon: i-heroicons-chart-bar
+testimonials:
+  title: What people are saying
+  description: Nuxt UI Pro is already loved by many developers and companies around the world.
+  items:
+    - quote: "We were using a SaaS service for the docs site, but were left unfulfilled. We put in the effort to do it in house, with UI Pro and not only did we get complimented by a prospect on our site, but they wanted to know our platform."
+      author:
+        name: 'Anthony Bettini'
+        job: 'CEO and founder of VulnCheck'
+        avatar:
+          src: 'https://media.licdn.com/dms/image/C4E03AQEY3pmXsH8hDg/profile-displayphoto-shrink_800_800/0/1519741248598?e=1704326400&v=beta&t=2h1d5FR3vzkeuGPwFfbAhJ0fsaIc77kymZ54UTxXuEU'
+        url: 'https://www.linkedin.com/in/anthonybettini/'
+    - quote: "Nuxt UI Pro is my go to component library. Out-of-the-box it handles all of the UI demands I throw at it while looking great. The customisation is really worth thought out, allowing you to override components in a breeze. Always amazed at the improvements dropped in each update as well, the team is doing an amazing job."
+      author:
+        name: 'Harlan Wilton'
+        job:  'Nuxt core team member'
+        avatar:
+          src: 'https://ipx.nuxt.com/f_auto,s_40x40/gh_avatar/harlan-zw'
+          srcset: 'https://ipx.nuxt.com/f_auto,s_80x80/gh_avatar/harlan-zw 2x'
+        url: 'https://github.com/harlan-zw'
+    - quote: "UI Pro saves 100s of hours of dev and design time while delivering a clean professional look on any device."
+      author:
+        name: 'Kevin Olson'
+        job:  'Founder of Fume.app'
+        avatar:
+          src: 'https://ipx.nuxt.com/f_auto,s_40x40/gh_avatar/acidjazz'
+          srcset: 'https://ipx.nuxt.com/f_auto,s_80x80/gh_avatar/acidjazz 2x'
+        url: 'https://github.com/acidjazz'
+cta:
+  title: Get started today
+  description: Nisi mollit id aliquip sunt est laborum sit sit.
+  links:
+    - label: Sign up for free
+      color: primary
+      variant: soft
+      size: xl
