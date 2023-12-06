@@ -24,12 +24,12 @@ useSeoMeta({
 
 const title = article.value.head?.title || article.value.title
 const description = article.value.head?.description || article.value.description
+
 useSeoMeta({
-  titleTemplate: '%s · Nuxt Blog',
   title,
+  ogTitle: title,
   description,
   ogDescription: description,
-  ogTitle: `${title} · Nuxt Blog`
 })
 
 if (article.value.image) {

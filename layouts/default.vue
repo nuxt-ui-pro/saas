@@ -7,11 +7,6 @@ const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', {
   server: false
 })
 
-useSeoMeta({
-  ogSiteName: 'Nuxt UI Pro - SaaS template',
-  twitterCard: 'summary_large_image'
-})
-
 provide('navigation', navigation)
 </script>
 

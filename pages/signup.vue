@@ -4,10 +4,15 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'Login'
+  title: 'Sign up'
 })
 
 const fields = [{
+  name: 'name',
+  type: 'text',
+  label: 'Name',
+  placeholder: 'Enter your name'
+}, {
   name: 'email',
   type: 'text',
   label: 'Email',
@@ -29,7 +34,7 @@ const validate = (state: any) => {
 const providers = [{
   label: 'Continue with GitHub',
   icon: 'i-simple-icons-github',
-  color: 'white' as const,
+  color: 'gray' as const,
   click: () => {
     console.log('Redirect to GitHub')
   }
@@ -48,23 +53,18 @@ function onSubmit (data) {
       :fields="fields"
       :validate="validate"
       :providers="providers"
-      title="Welcome back"
       align="top"
-      icon="i-heroicons-lock-closed"
+      title="Create an account"
       :ui="{ base: 'text-center', footer: 'text-center' }"
-      :submit-button="{ trailingIcon: 'i-heroicons-arrow-right-20-solid' }"
+      :submit-button="{ label: 'Create account' }"
       @submit="onSubmit"
     >
       <template #description>
-        Don't have an account? <NuxtLink to="/signup" class="text-primary font-medium">Sign up</NuxtLink>.
-      </template>
-
-      <template #password-hint>
-        <NuxtLink to="/" class="text-primary font-medium">Forgot password?</NuxtLink>
+        Already have an account? <NuxtLink to="/login" class="text-primary font-medium">Login</NuxtLink>.
       </template>
 
       <template #footer>
-        By signing in, you agree to our <NuxtLink to="/" class="text-primary font-medium">Terms of Service</NuxtLink>.
+        By signing up, you agree to our <NuxtLink to="/" class="text-primary font-medium">Terms of Service</NuxtLink>.
       </template>
     </UAuthForm>
   </UCard>

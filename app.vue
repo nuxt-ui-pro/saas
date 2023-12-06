@@ -16,6 +16,12 @@ useHead({
     lang: 'en'
   }
 })
+
+useSeoMeta({
+  titleTemplate: '%s - Nuxt UI Pro - SaaS template',
+  ogSiteName: 'Nuxt UI Pro - SaaS template',
+  twitterCard: 'summary_large_image'
+})
 </script>
 
 <template>

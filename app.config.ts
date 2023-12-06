@@ -1,12 +1,7 @@
 export default defineAppConfig({
   ui: {
-    primary: 'blue',
+    primary: 'indigo',
     gray: 'cool',
-    variables: {
-      dark: {
-        background: 'var(--color-gray-950)'
-      }
-    },
     button: {
       rounded: 'rounded-full',
       default: {
