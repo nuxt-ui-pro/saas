@@ -40,7 +40,7 @@ const providers = [{
   }
 }]
 
-function onSubmit (data) {
+function onSubmit (data: any) {
   console.log('Submitted', data)
 }
 </script>

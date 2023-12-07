@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxtjs/fontaine',
     '@nuxtjs/google-fonts',
+    '@vueuse/nuxt',
     'nuxt-og-image',
   ],
   ui: {
@@ -27,7 +28,5 @@ export default defineNuxtConfig({
     '/api/search.json': { prerender: true },
     '/docs': { redirect: '/docs/getting-started', prerender: false }
   },
-  // Devtools / Typescript
-  devtools: { enabled: true },
-  typescript: { strict: false }
+  devtools: { enabled: true }
 })

@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import type { NavItem } from '@nuxt/content/dist/runtime/types'
 
-const navigation = inject<NavItem[]>('navigation', [])
+const navigation = inject<Ref<NavItem[]>>('navigation', ref([]))
 
 const links = [{
-  label: 'Documentation',
-  to: '/docs'
-}, {
   label: 'Pricing',
   to: '/pricing'
 }, {
@@ -15,6 +12,9 @@ const links = [{
 }, {
   label: 'Changelog',
   to: '/changelog'
+}, {
+  label: 'Docs',
+  to: '/docs'
 }]
 </script>
 
@@ -25,8 +25,8 @@ const links = [{
     </template>
 
     <template #right>
-      <UButton label="Sign in" color="gray" to="/login" />
-      <UButton label="Get started" icon="i-heroicons-arrow-right-20-solid" trailing color="black" class="hidden lg:flex" />
+      <UButton label="Log in" color="gray" to="/login" />
+      <UButton label="Sign up" icon="i-heroicons-arrow-right-20-solid" trailing color="black" to="/signup" class="hidden lg:flex" />
     </template>
 
     <template #panel>

@@ -1,5 +1,9 @@
 <script setup lang="ts">
 const { data: page } = await useAsyncData('blog', () => queryContent('/blog').findOne())
+if (!page.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+}
+
 const { data: articles } = await useAsyncData('articles', () => queryContent('/blog')
   .where({ _extension: 'md' })
   .without(['body', 'excerpt'])
@@ -26,7 +30,7 @@ defineOgImage({
 
     <UPage>
       <UPageBody>
-        <!-- <UPageGrid>
+        <UPageGrid>
           <UPageCard
             v-for="(article, index) in articles"
             :key="index"
@@ -42,7 +46,7 @@ defineOgImage({
               description: 'line-clamp-2'
             }"
           >
-            <template #header>
+            <!-- <template #header>
               <NuxtImg
                 :src="article.image"
                 :alt="article.title || ''"
@@ -55,9 +59,9 @@ defineOgImage({
 
             <template #icon>
               <UBadge :label="article.category" variant="subtle" />
-            </template>
+            </template> -->
 
-            <template #footer>
+            <!-- <template #footer>
               <div class="flex items-center justify-between gap-3">
                 <time class="text-gray-500 dark:text-gray-400">{{ article.date }}</time>
 
@@ -75,9 +79,9 @@ defineOgImage({
                   </UAvatar>
                 </UAvatarGroup>
               </div>
-            </template>
+            </template> -->
           </UPageCard>
-        </UPageGrid> -->
+        </UPageGrid>
       </UPageBody>
     </UPage>
   </UContainer>

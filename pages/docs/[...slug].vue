@@ -8,11 +8,11 @@ if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () => queryContent()
+const { data: surround } = await useAsyncData(`${route.path}-surround`, () => queryContent('/docs')
   .where({ _extension: 'md', navigation: { $ne: false } })
   .only(['title', 'description', '_path'])
   .findSurround(withoutTrailingSlash(route.path))
-)
+, { default: () => [] })
 
 useSeoMeta({
   title: page.value.title,
@@ -27,11 +27,11 @@ defineOgImage({
   description: page.value.description
 })
 
-const headline = computed(() => findPageHeadline(page.value))
+const headline = computed(() => findPageHeadline(page.value!))
 </script>
 
 <template>
-  <UPage>
+  <UPage v-if="page">
     <UPageHeader :title="page.title" :description="page.description" :links="page.links" :headline="headline" />
 
     <UPageBody prose>

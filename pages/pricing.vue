@@ -1,5 +1,8 @@
 <script setup lang="ts">
 const { data: page } = await useAsyncData('pricing', () => queryContent('/pricing').findOne())
+if (!page.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+}
 
 useSeoMeta({
   title: page.value.title,
@@ -18,7 +21,7 @@ const isYearly = ref(false)
 </script>
 
 <template>
-  <UContainer>
+  <UContainer v-if="page">
     <UPageHero v-bind="page.hero">
       <template #links>
         <UPricingToggle v-model="isYearly" class="w-48" />
@@ -35,7 +38,9 @@ const isYearly = ref(false)
           <UIcon v-for="icon in page.logos.icons" :key="icon" :name="icon" class="w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400" />
         </ULandingLogos>
 
-        <ULandingFAQ :items="page.faq.items" multiple default-open class="mt-40" />
+        <ULandingSection :title="page.faq.title" :description="page.faq.description">
+          <ULandingFAQ :items="page.faq.items" multiple default-open />
+        </ULandingSection>
       </UPageBody>
     </UPage>
   </UContainer>
