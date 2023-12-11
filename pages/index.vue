@@ -64,7 +64,7 @@ const percent = computed(() => {
 </template>
 
 <style scoped>
-.landing /deep/ h1, .landing /deep/ h2 {
+.landing :deep(h1), .landing :deep(h2) {
   background: linear-gradient(90deg, rgba(241, 245, 249, 0.40) 4.65%, #F1F5F9 51.22%, rgba(241, 245, 249, 0.40) 93.04%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
