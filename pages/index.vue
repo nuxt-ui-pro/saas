@@ -31,12 +31,14 @@ const percent = computed(() => {
   <div v-if="page" class="landing">
     <ULandingHero :title="page.hero.title" :description="page.hero.description" :links="page.hero.links">
       <template #headline>
-        <UBadge v-if="page.hero.headline" variant="subtle" size="lg" class="relative rounded-full">
+        <UBadge v-if="page.hero.headline" variant="subtle" size="lg" class="relative rounded-full font-semibold">
           <NuxtLink :to="page.hero.headline.to" target="_blank" class="focus:outline-none" tabindex="-1">
             <span class="absolute inset-0" aria-hidden="true" />
           </NuxtLink>
 
           {{ page.hero.headline.label }}
+
+          <UIcon name="i-heroicons-arrow-right-20-solid" class="ml-1" />
         </UBadge>
       </template>
     </ULandingHero>
