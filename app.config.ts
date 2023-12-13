@@ -13,6 +13,9 @@ export default defineAppConfig({
         size: 'md'
       }
     },
+    card: {
+      rounded: 'rounded-xl'
+    },
     footer: {
       top: {
         wrapper: 'border-t border-gray-200 dark:border-gray-800',

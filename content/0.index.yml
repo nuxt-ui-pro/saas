@@ -7,14 +7,9 @@ hero:
   headline:
     label: Made with Nuxt UI Pro
     to: https://ui.nuxt.com/pro
-  screenshot:
-    src: https://volta.net/home/screenshot.png
-    alt: App screenshot
-    width: 1216
-    height: 684
   links:
     - label: Get started
-      to: '#features'
+      to: '/signup'
       size: xl
       color: black
       icon: i-heroicons-arrow-right-20-solid
