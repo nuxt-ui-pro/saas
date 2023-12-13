@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     display: 'swap',
     download: true,
     families: {
-      'DM+Sans': [400, 500, 600, 700]
+      'DM+Sans': [300, 400, 500, 600, 700]
     }
   },
   routeRules: {

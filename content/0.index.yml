@@ -23,6 +23,50 @@ hero:
       size: xl
       color: gray
       to: /docs
+sections:
+  - title: The power of our service
+    description: Aliqua labore laboris fugiat. Reprehenderit exercitation eu commodo. Officia nostrud sit et aliqua ea ex sunt minim incididunt sunt.
+    id: features
+    align: left
+    features:
+      - name: Easy to use
+        description: Id laborum laboris duis nostrud excepteur ut velit.
+        icon: i-heroicons-cog
+      - name: Reliable
+        description: Magna Lorem ex cillum fugiat ad enim aute irure sit duis minim.
+        icon: i-heroicons-check
+      - name: Secure
+        description: Proident nostrud excepteur sint ut culpa consectetur aute adipisicing.
+        icon: i-heroicons-lock-closed
+    links:
+      - label: Explore components
+        to: /pro/components
+        color: gray
+        icon: i-heroicons-arrow-right-20-solid
+        trailing: true
+        size: md
+        class: ml-8
+  - title: The speed of our service
+    description: Cillum sint enim excepteur ut deserunt qui nisi in deserunt in. Deserunt aliquip quis aliquip eu quis ex velit velit nostrud sit.
+    align: right
+    features:
+      - name: Fast
+        description: Qui reprehenderit nostrud dolore nisi ad fugiat labore eiusmod.
+        icon: i-heroicons-rocket-launch
+      - name: Affordable
+        description: Reprehenderit fugiat elit in do ipsum ut pariatur.
+        icon: i-heroicons-currency-dollar
+      - name: Scalable
+        description: Lorem deserunt et eiusmod. Ea in consectetur minim officia.
+        icon: i-heroicons-chart-bar
+    links:
+      - label: Learn more
+        to: /pro/guide/content
+        color: gray
+        icon: i-heroicons-arrow-right-20-solid
+        trailing: true
+        size: md
+        class: ml-8
 features:
   title: Why choose our service?
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
