@@ -32,7 +32,7 @@ defineOgImage({
 
           {{ page.hero.headline.label }}
 
-          <UIcon name="i-heroicons-arrow-right-20-solid" class="ml-1" />
+          <UIcon v-if="page.hero.headline.icon" :name="page.hero.headline.icon" class="ml-1 w-4 h-4 pointer-events-none" />
         </UBadge>
       </template>
     </ULandingHero>

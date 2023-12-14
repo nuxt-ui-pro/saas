@@ -7,6 +7,7 @@ hero:
   headline:
     label: Made with Nuxt UI Pro
     to: https://ui.nuxt.com/pro
+    icon: i-heroicons-arrow-top-right-on-square-20-solid
   links:
     - label: Get started
       to: '/signup'
@@ -14,10 +15,12 @@ hero:
       color: black
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
-    - label: Documentation
+    - label: Use this template
+      icon: i-simple-icons-github
       size: xl
       color: gray
-      to: /docs
+      to: https://github.com/nuxt-ui-pro/sass
+      target: _blank
 sections:
   - title: The power of our service
     description: Aliqua labore laboris fugiat. Reprehenderit exercitation eu commodo. Officia nostrud sit et aliqua ea ex sunt minim incididunt sunt.
