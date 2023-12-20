@@ -25,7 +25,7 @@
     "nuxt-og-image": "^2.2.4"
   },
   "devDependencies": {
-    "@nuxt/devtools": "1.0.5",
+    "@nuxt/devtools": "1.0.6",
     "@nuxt/eslint-config": "^0.2.0",
     "@nuxthq/studio": "^1.0.6",
     "eslint": "^8.56.0",
