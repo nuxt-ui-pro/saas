@@ -26,8 +26,7 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/api/search.json': { prerender: true },
-    '/docs': { redirect: '/docs/getting-started', prerender: false },
-    '/api/_content/query/**': { isr: true }
+    '/docs': { redirect: '/docs/getting-started', prerender: false }
   },
   devtools: { enabled: true }
 })
