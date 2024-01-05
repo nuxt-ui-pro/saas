@@ -45,27 +45,27 @@ if (post.value.image?.src) {
 
 <template>
   <UContainer v-if="post">
-    <UPageHeader :title="post.title" class="py-[52px]">
+    <UPageHeader :title="post.title" :description="post.description">
       <template #headline>
         <UBadge v-bind="post.badge" variant="subtle" />
         <span class="text-gray-500 dark:text-gray-400">&middot;</span>
         <time class="text-gray-500 dark:text-gray-400">{{ new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
       </template>
 
-      <template #links>
+      <div class="flex flex-wrap items-center gap-3 mt-4">
         <UButton
           v-for="(author, index) in post.authors"
           :key="index"
           :to="author.to"
-          color="gray"
+          color="white"
           target="_blank"
           size="sm"
         >
-          <UAvatar v-bind="author.avatar" :alt="author.name" size="xs" />
+          <UAvatar v-bind="author.avatar" :alt="author.name" size="2xs" />
 
           {{ author.name }}
         </UButton>
-      </template>
+      </div>
     </UPageHeader>
 
     <UPage>
