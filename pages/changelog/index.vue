@@ -26,10 +26,8 @@ defineOgImage({
 
 <template>
   <UContainer>
-    <UPageHero v-bind="page" />
+    <UPageHeader v-bind="page" class="py-[50px]" />
 
-    <UPage>
-      <UPageBody />
-    </UPage>
+    <UPageBody />
   </UContainer>
 </template>
