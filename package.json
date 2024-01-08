@@ -13,14 +13,14 @@
   },
   "dependencies": {
     "@iconify-json/heroicons": "^1.1.19",
-    "@iconify-json/simple-icons": "^1.1.86",
+    "@iconify-json/simple-icons": "^1.1.87",
     "@nuxt/content": "^2.10.0",
     "@nuxt/image": "^1.1.0",
     "@nuxt/ui-pro": "^0.6.1",
     "@nuxtjs/fontaine": "^0.4.1",
     "@nuxtjs/google-fonts": "^3.1.3",
     "@vueuse/nuxt": "^10.7.1",
-    "nuxt": "^3.9.0",
+    "nuxt": "^3.9.1",
     "nuxt-og-image": "^2.2.4"
   },
   "devDependencies": {
