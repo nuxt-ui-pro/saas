@@ -13,7 +13,7 @@ useSeoMeta({
 })
 
 defineOgImage({
-  component: 'Sass',
+  component: 'Saas',
   title: page.value.title,
   description: page.value.description
 })

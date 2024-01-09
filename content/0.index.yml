@@ -19,7 +19,7 @@ hero:
       icon: i-simple-icons-github
       size: xl
       color: gray
-      to: https://github.com/nuxt-ui-pro/sass
+      to: https://github.com/nuxt-ui-pro/saas
       target: _blank
 sections:
   - title: The power of our service

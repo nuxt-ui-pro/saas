@@ -35,7 +35,7 @@ if (post.value.image?.src) {
   })
 } else {
   defineOgImage({
-    component: 'Sass',
+    component: 'Saas',
     title,
     description,
     headline: 'Blog'
