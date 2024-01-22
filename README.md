@@ -84,6 +84,38 @@ bun run preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
+## Nuxt Studio integration
+
+Add `@nuxthq/studio` dependency to your package.json:
+
+```bash
+# npm
+npm install --save-dev @nuxthq/studio
+
+# pnpm
+pnpm add -D @nuxthq/studio
+
+# yarn
+yarn add -D @nuxthq/studio
+
+# bun
+bun add -d @nuxthq/studio
+```
+
+Add this module to your `nuxt.config.ts`:
+
+```ts
+export default defineNuxtConfig({
+  ...
+  modules: [
+    ...
+    '@nuxthq/studio'
+  ]
+})
+```
+
+Read more on [Nuxt Studio docs](https://nuxt.studio/docs/projects/setup).
+
 ## Renovate integration
 
 Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
