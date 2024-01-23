@@ -12,13 +12,13 @@ dependencies:
     specifier: ^1.1.19
     version: 1.1.19
   '@iconify-json/simple-icons':
-    specifier: ^1.1.88
+    specifier: ^1.1.89
     version: 1.1.89
   '@nuxt/content':
     specifier: ^2.11.0
     version: 2.11.0(nuxt@3.9.3)(vue@3.3.13)
   '@nuxt/image':
-    specifier: ^1.1.0
+    specifier: ^1.3.0
     version: 1.3.0
   '@nuxt/ui-pro':
     specifier: ^0.7.3
@@ -44,8 +44,8 @@ devDependencies:
     specifier: ^0.2.0
     version: 0.2.0(eslint@8.56.0)
   '@nuxthq/studio':
-    specifier: ^1.0.9
-    version: 1.0.9
+    specifier: ^1.0.10
+    version: 1.0.10
   eslint:
     specifier: ^8.56.0
     version: 8.56.0
@@ -1695,8 +1695,8 @@ packages:
       - vue-tsc
     dev: false
 
-  /@nuxthq/studio@1.0.9:
-    resolution: {integrity: sha512-k8qK+9RLET5LQxRKdPTE2pxAYdK/fXXhnILSkV5i7WxhKwpl6KzZa3oNzqc4ccOVyKWti+95UjV7IkMktBmTrA==}
+  /@nuxthq/studio@1.0.10:
+    resolution: {integrity: sha512-F0Gd4H/YfsVorg0EZ5+++/pG7WC8S9jvWg4CNQH0ZZXCcqFE6cSvxExtkfjJEDLEswp2OYLF8tCSkrYVQsFQqQ==}
     dependencies:
       '@nuxt/kit': 3.9.3
       defu: 6.1.4
