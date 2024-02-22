@@ -12,7 +12,7 @@ const links = computed(() => navigation.value.find((item) => item._path === '/do
       <template #left>
         <UAside>
           <template #top>
-            <UDocsSearchButton class="rounded-md" size="sm" />
+            <UContentSearchButton class="rounded-md" size="sm" />
           </template>
 
           <UNavigationTree :links="mapContentNavigation(links)" />

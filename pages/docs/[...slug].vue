@@ -39,11 +39,11 @@ const headline = computed(() => findPageHeadline(page.value!))
 
       <hr v-if="surround?.length">
 
-      <UDocsSurround :surround="surround" />
+      <UContentSurround :surround="surround" />
     </UPageBody>
 
     <template v-if="page.toc !== false" #right>
-      <UDocsToc :links="page.body?.toc?.links" />
+      <UContentToc :links="page.body?.toc?.links" />
     </template>
   </UPage>
 </template>
