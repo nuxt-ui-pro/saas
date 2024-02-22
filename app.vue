@@ -19,7 +19,6 @@ useHead({
 
 useSeoMeta({
   titleTemplate: '%s - Nuxt UI Pro - SaaS template',
-  ogSiteName: 'Nuxt UI Pro - SaaS template',
   ogImage: 'https://saas-template.nuxt.dev/social-card.png',
   twitterImage: 'https://saas-template.nuxt.dev/social-card.png',
   twitterCard: 'summary_large_image'
