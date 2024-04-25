@@ -23,7 +23,7 @@ useSeoMeta({
   title,
   ogTitle: title,
   description,
-  ogDescription: description,
+  ogDescription: description
 })
 
 if (post.value.image?.src) {
@@ -45,9 +45,15 @@ if (post.value.image?.src) {
 
 <template>
   <UContainer v-if="post">
-    <UPageHeader :title="post.title" :description="post.description">
+    <UPageHeader
+      :title="post.title"
+      :description="post.description"
+    >
       <template #headline>
-        <UBadge v-bind="post.badge" variant="subtle" />
+        <UBadge
+          v-bind="post.badge"
+          variant="subtle"
+        />
         <span class="text-gray-500 dark:text-gray-400">&middot;</span>
         <time class="text-gray-500 dark:text-gray-400">{{ new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
       </template>
@@ -61,7 +67,11 @@ if (post.value.image?.src) {
           target="_blank"
           size="sm"
         >
-          <UAvatar v-bind="author.avatar" :alt="author.name" size="2xs" />
+          <UAvatar
+            v-bind="author.avatar"
+            :alt="author.name"
+            size="2xs"
+          />
 
           {{ author.name }}
         </UButton>
@@ -70,7 +80,10 @@ if (post.value.image?.src) {
 
     <UPage>
       <UPageBody prose>
-        <ContentRenderer v-if="post && post.body" :value="post" />
+        <ContentRenderer
+          v-if="post && post.body"
+          :value="post"
+        />
 
         <hr v-if="surround?.length">
 
@@ -78,7 +91,10 @@ if (post.value.image?.src) {
       </UPageBody>
 
       <template #right>
-        <UContentToc v-if="post.body && post.body.toc" :links="post.body.toc.links" />
+        <UContentToc
+          v-if="post.body && post.body.toc"
+          :links="post.body.toc.links"
+        />
       </template>
     </UPage>
   </UContainer>

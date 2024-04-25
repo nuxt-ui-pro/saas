@@ -32,17 +32,28 @@ const headline = computed(() => findPageHeadline(page.value!))
 
 <template>
   <UPage v-if="page">
-    <UPageHeader :title="page.title" :description="page.description" :links="page.links" :headline="headline" />
+    <UPageHeader
+      :title="page.title"
+      :description="page.description"
+      :links="page.links"
+      :headline="headline"
+    />
 
     <UPageBody prose>
-      <ContentRenderer v-if="page.body" :value="page" />
+      <ContentRenderer
+        v-if="page.body"
+        :value="page"
+      />
 
       <hr v-if="surround?.length">
 
       <UContentSurround :surround="surround" />
     </UPageBody>
 
-    <template v-if="page.toc !== false" #right>
+    <template
+      v-if="page.toc !== false"
+      #right
+    >
       <UContentToc :links="page.body?.toc?.links" />
     </template>
   </UPage>

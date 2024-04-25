@@ -40,7 +40,7 @@ const providers = [{
   }
 }]
 
-function onSubmit (data: any) {
+function onSubmit(data: any) {
   console.log('Submitted', data)
 }
 </script>
@@ -60,11 +60,17 @@ function onSubmit (data: any) {
       @submit="onSubmit"
     >
       <template #description>
-        Already have an account? <NuxtLink to="/login" class="text-primary font-medium">Login</NuxtLink>.
+        Already have an account? <NuxtLink
+          to="/login"
+          class="text-primary font-medium"
+        >Login</NuxtLink>.
       </template>
 
       <template #footer>
-        By signing up, you agree to our <NuxtLink to="/" class="text-primary font-medium">Terms of Service</NuxtLink>.
+        By signing up, you agree to our <NuxtLink
+          to="/"
+          class="text-primary font-medium"
+        >Terms of Service</NuxtLink>.
       </template>
     </UAuthForm>
   </UCard>
