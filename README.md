@@ -116,7 +116,7 @@ export default defineNuxtConfig({
 })
 ```
 
-Read more on [Nuxt Studio docs](https://nuxt.studio/docs/projects/setup).
+Read more on [Nuxt Studio docs](https://nuxt.studio/docs/get-started/setup).
 
 ## Renovate integration
 
