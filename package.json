@@ -27,5 +27,8 @@
     "@nuxthq/studio": "^2.0.3",
     "eslint": "^9.6.0",
     "vue-tsc": "^2.0.26"
+  },
+  "resolutions": {
+    "nuxt-og-image": "3.0.0-rc.56"
   }
 }
