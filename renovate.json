@@ -1,8 +1,5 @@
 {
   "extends": [
     "github>nuxt/renovate-config-nuxt"
-  ],
-  "ignoreDeps": [
-    "nuxt-og-image"
   ]
 }
