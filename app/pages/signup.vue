@@ -14,7 +14,7 @@ const fields = [{
   placeholder: 'Enter your name'
 }, {
   name: 'email',
-  type: 'text',
+  type: 'email',
   label: 'Email',
   placeholder: 'Enter your email'
 }, {
