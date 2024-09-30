@@ -28,5 +28,8 @@
     "eslint": "^9.11.1",
     "vue-tsc": "^2.1.6"
   },
+  "resolutions": {
+    "@nuxtjs/tailwindcss": "nightly"
+  },
   "packageManager": "pnpm@9.11.0"
 }
