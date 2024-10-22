@@ -11,11 +11,7 @@ useSeoMeta({
   ogDescription: page.value.description
 })
 
-defineOgImage({
-  component: 'Saas',
-  title: page.value.title,
-  description: page.value.description
-})
+defineOgImageComponent('Saas')
 
 const isYearly = ref(false)
 </script>
