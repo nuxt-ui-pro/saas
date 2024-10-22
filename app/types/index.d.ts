@@ -10,6 +10,6 @@ export interface BlogPost extends ParsedContent {
   authors?: ({
     name: string
     description?: string
-    avatar?: Avatar
+    avatar: Avatar
   } & Link)[]
 }
