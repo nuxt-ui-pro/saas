@@ -63,7 +63,7 @@ if (post.value.image?.src) {
         >
           <UAvatar
             v-bind="author.avatar"
-            :alt="author.name"
+            alt="Author avatar"
             size="2xs"
           />
 
