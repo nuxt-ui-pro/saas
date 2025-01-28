@@ -57,7 +57,8 @@ if (post.value.image?.src) {
           v-for="(author, index) in post.authors"
           :key="index"
           :to="author.to"
-          color="white"
+          color="neutral"
+          variant="subtle"
           target="_blank"
           size="sm"
         >

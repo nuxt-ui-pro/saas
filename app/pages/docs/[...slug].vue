@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { withoutTrailingSlash } from 'ufo'
+import { findPageHeadline } from '#ui-pro/utils'
 
 const route = useRoute()
 
@@ -41,7 +42,7 @@ const headline = computed(() => findPageHeadline(page.value!))
         :value="page"
       />
 
-      <hr v-if="surround?.length">
+      <USeparator v-if="surround?.length" />
 
       <UContentSurround :surround="surround" />
     </UPageBody>

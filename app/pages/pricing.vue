@@ -28,38 +28,38 @@ const isYearly = ref(false)
     </UPageHero>
 
     <UContainer>
-      <UPricingGrid>
-        <UPricingCard
+      <UPricingPlans>
+        <UPricingPlan
           v-for="(plan, index) in page.plans"
           :key="index"
           v-bind="plan"
           :price="isYearly ? plan.price.year : plan.price.month"
           :cycle="isYearly ? '/year' : '/month'"
         />
-      </UPricingGrid>
+      </UPricingPlans>
     </UContainer>
 
-    <ULandingSection>
-      <ULandingLogos>
+    <UPageSection>
+      <UPageLogos>
         <UIcon
           v-for="icon in page.logos.icons"
           :key="icon"
           :name="icon"
           class="w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400"
         />
-      </ULandingLogos>
-    </ULandingSection>
+      </UPageLogos>
+    </UPageSection>
 
-    <ULandingSection
+    <UPageSection
       :title="page.faq.title"
       :description="page.faq.description"
     >
-      <ULandingFAQ
+      <UPageAccordion
         :items="page.faq.items"
         multiple
         default-open
         class="max-w-4xl mx-auto"
       />
-    </ULandingSection>
+    </UPageSection>
   </div>
 </template>

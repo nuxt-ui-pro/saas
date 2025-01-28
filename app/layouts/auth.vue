@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useHead({
   bodyAttrs: {
-    class: 'dark:bg-gray-950'
+    class: 'dark:bg-neutral-950'
   }
 })
 </script>
@@ -14,7 +14,7 @@ useHead({
       icon="i-heroicons-home"
       label="Home"
       to="/"
-      color="black"
+      color="neutral"
       class="absolute top-4"
     />
 

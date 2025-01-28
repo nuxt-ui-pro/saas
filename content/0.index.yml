@@ -7,18 +7,19 @@ hero:
   headline:
     label: Made with Nuxt UI Pro
     to: https://ui.nuxt.com/pro
-    icon: i-heroicons-arrow-top-right-on-square-20-solid
+    icon: i-lucide-arrow-up-right
   links:
     - label: Get started
       to: '/signup'
       size: xl
-      color: black
+      color: neutral
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
     - label: Use this template
       icon: i-simple-icons-github
       size: xl
-      color: gray
+      color: neutral
+      variant: ghost
       to: https://github.com/nuxt-ui-pro/saas
       target: _blank
 sections:
@@ -39,7 +40,7 @@ sections:
     links:
       - label: Explore components
         to: /pro/components
-        color: gray
+        color: neutral
         icon: i-heroicons-arrow-right-20-solid
         trailing: true
         size: md
@@ -60,7 +61,7 @@ sections:
     links:
       - label: Learn more
         to: /pro/guide/content
-        color: gray
+        color: neutral
         icon: i-heroicons-arrow-right-20-solid
         trailing: true
         size: md
@@ -93,42 +94,42 @@ testimonials:
   description: Proident sunt exercitation minim laborum enim laboris labore esse.
   items:
     - quote: Nostrud tempor sunt fugiat. Dolor in sint dolore labore non occaecat adipisicing Lorem labore ullamco enim excepteur. In fugiat Lorem sit velit id veniam esse eiusmod non ea voluptate cupidatat reprehenderit ullamco dolore. Mollit laborum occaecat aliquip.
-      author:
+      user:
         name: Rose Roberson
         description: CEO at Company
         avatar:
           src: https://i.pravatar.cc/120?img=1
           loading: lazy
     - quote: Eiusmod dolor aute ut nulla pariatur officia consequat aute amet exercitation.
-      author:
+      user:
         name: Chace Rodgers
         description: CEO at Company
         avatar:
           src: https://i.pravatar.cc/120?img=7
           loading: lazy
     - quote: Id duis velit enim officia ad nisi incididunt magna ex dolor minim deserunt dolor. Esse incididunt cillum nostrud esse do quis amet labore amet nulla eiusmod amet nulla Lorem. Incididunt ex voluptate irure officia laboris ea proident est qui.
-      author:
+      user:
         name: Cornelius Sheppard
         description: CEO at Company
         avatar:
           src: https://i.pravatar.cc/120?img=3
           loading: lazy
     - quote: Velit consectetur in adipisicing culpa eiusmod commodo eu ex dolore. Officia irure nisi dolor dolore velit fugiat. Aliqua sint aliqua aute elit eu sunt.
-      author:
+      user:
         name: Destinee Woods
         description: CEO at Company
         avatar:
           src: https://i.pravatar.cc/120?img=5
           loading: lazy
     - quote: Proident quis deserunt qui ex exercitation veniam id Lorem est cupidatat ipsum irure aliquip ad.
-      author:
+      user:
         name: Kaleb Mccormick
         description: CEO at Company
         avatar:
           src: https://i.pravatar.cc/120?img=8
           loading: lazy
     - quote: Magna officia quis ea ea in officia non voluptate ipsum culpa do labore sunt. Aute est dolore commodo sint officia ad laboris dolor magna aliquip exercitation tempor commodo.
-      author:
+      user:
         name: Jazmin Mccall
         description: CEO at Company
         avatar:
@@ -137,8 +138,9 @@ testimonials:
 cta:
   title: Get started today
   description: Nisi mollit id aliquip sunt est laborum sit sit.
+  variant: soft
   links:
     - label: Buy now
       size: xl
-      color: black
+      color: neutral
       to: /pricing

@@ -29,7 +29,7 @@ defineOgImageComponent('Saas')
     />
 
     <UPageBody>
-      <UBlogList>
+      <UBlogPosts>
         <UBlogPost
           v-for="(post, index) in posts"
           :key="index"
@@ -46,7 +46,7 @@ defineOgImageComponent('Saas')
             description: 'line-clamp-2'
           }"
         />
-      </UBlogList>
+      </UBlogPosts>
     </UPageBody>
   </UContainer>
 </template>
