@@ -1,4 +1,3 @@
-/*
 import { defineCollection, z } from '@nuxt/content'
 
 const variantEnum = z.enum(['solid', 'outline', 'subtle', 'soft', 'ghost', 'link'])
@@ -26,7 +25,8 @@ const imageSchema = z.object({
 const sectionSchema = z.object({
   headline: z.string().optional(),
   title: z.string().nonempty(),
-  description: z.string().optional()
+  description: z.string().optional(),
+  variant: z.string().optional()
 })
 
 const featureItemSchema = z.object({
@@ -36,45 +36,34 @@ const featureItemSchema = z.object({
 })
 
 export const collections = {
-  content: defineCollection({
-    source: 'index.yml',
+  index: defineCollection({
+    source: '0.index.yml',
     type: 'data',
     schema: z.object({
       title: z.string().nonempty(),
       description: z.string().nonempty(),
       hero: sectionSchema.extend({
+        headline: z.object({
+          label: z.string().nonempty(),
+          to: z.string().nonempty(),
+          icon: z.string().nonempty()
+        }),
         links: z.array(linkSchema)
-      }),
-      logos: z.object({
-        title: z.string().nonempty(),
-        icons: z.array(z.string().nonempty())
       }),
       sections: z.array(
         sectionSchema.extend({
-          items: z.array(featureItemSchema),
+          id: z.string().nonempty(),
+          orientation: z.string().nonempty(),
+          features: z.array(featureItemSchema),
           links: z.array(linkSchema),
-          reverse: z.boolean().optional(),
-          code: z.string().optional()
+          reverse: z.boolean().optional()
         })
       ),
-      templates: sectionSchema.extend({
-        items: z.array(featureItemSchema),
-        links: z.array(linkSchema)
-      }),
-      pricing: sectionSchema.extend({
-        plans: z.array(
-          z.object({
-            title: z.string().nonempty(),
-            description: z.string().nonempty(),
-            price: z.string().nonempty(),
-            billing_period: z.string().nonempty(),
-            billing_cycle: z.string().nonempty(),
-            button: linkSchema,
-            features: z.array(z.string().nonempty()),
-            highlight: z.boolean().optional()
-          })
-        )
-      }),
+      features: z.array(
+        sectionSchema.extend({
+          items: z.array(featureItemSchema)
+        })
+      ),
       testimonials: sectionSchema.extend({
         items: z.array(
           z.object({
@@ -91,6 +80,35 @@ export const collections = {
       }),
       cta: sectionSchema.extend({
         links: z.array(linkSchema)
+      })
+    })
+  }),
+  pricing: defineCollection({
+    source: '2.pricing.yml',
+    type: 'data',
+    schema: sectionSchema.extend({
+      hero: z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty()
+      }),
+      plans: z.array(
+        z.object({
+          title: z.string().nonempty(),
+          description: z.string().nonempty(),
+          price: z.object({
+            month: z.string().nonempty(),
+            year: z.string().nonempty()
+          }),
+          billing_period: z.string().nonempty(),
+          billing_cycle: z.string().nonempty(),
+          button: linkSchema,
+          features: z.array(z.string().nonempty()),
+          highlight: z.boolean().optional()
+        })
+      ),
+      logos: z.object({
+        title: z.string().nonempty(),
+        icons: z.array(z.string())
       }),
       faq: sectionSchema.extend({
         items: z.array(
@@ -102,6 +120,10 @@ export const collections = {
         )
       })
     })
+  }),
+  blog: defineCollection({
+    source: '3.blog.yml',
+    type: 'data',
+    schema: sectionSchema
   })
 }
-*/

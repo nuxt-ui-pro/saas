@@ -4,7 +4,6 @@ navigation.icon: i-heroicons-credit-card
 hero:
   title: A plan for every need
   description: Our plans are designed to meet the requirements of both beginners and players. Get the right plan that suits you.
-  align: center
 plans:
   - title: Basic
     description: A basic plan for individuals.
