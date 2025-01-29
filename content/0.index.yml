@@ -26,7 +26,7 @@ sections:
   - title: The power of our service
     description: Aliqua labore laboris fugiat. Reprehenderit exercitation eu commodo. Officia nostrud sit et aliqua ea ex sunt minim incididunt sunt.
     id: features
-    align: left
+    orientation: horizontal
     features:
       - name: Easy to use
         description: Id laborum laboris duis nostrud excepteur ut velit.
@@ -47,7 +47,8 @@ sections:
         class: ml-8
   - title: The speed of our service
     description: Cillum sint enim excepteur ut deserunt qui nisi in deserunt in. Deserunt aliquip quis aliquip eu quis ex velit velit nostrud sit.
-    align: right
+    orientation: horizontal
+    reverse: true
     features:
       - name: Fast
         description: Qui reprehenderit nostrud dolore nisi ad fugiat labore eiusmod.

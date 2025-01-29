@@ -80,7 +80,7 @@ if (post.value.image?.src) {
           :value="post"
         />
 
-        <hr v-if="surround?.length">
+        <USeparator v-if="surround?.length" />
 
         <UContentSurround :surround="surround" />
       </UPageBody>

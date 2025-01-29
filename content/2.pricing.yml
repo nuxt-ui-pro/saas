@@ -11,10 +11,10 @@ plans:
     price:
       month: $9.9
       year: $99.9
-    align: top
     button:
       label: Get Started
-      color: white
+      color: neutral
+      variant: subtle
     features:
       - 1 GB Storage
       - 1 Email Account
@@ -29,10 +29,9 @@ plans:
       month: $19.9
       year: $199.9
     highlight: true
-    align: top
+    scale: true
     button:
       label: Get Started
-      color: black
     features:
       - 10 GB Storage
       - 10 Email Accounts
@@ -46,10 +45,10 @@ plans:
     price:
       month: $29.9
       year: $299.9
-    align: top
     button:
       label: Get Started
-      color: white
+      color: neutral
+      variant: subtle
     features:
       - 100 GB Storage
       - 100 Email Accounts

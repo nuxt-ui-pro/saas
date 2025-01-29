@@ -61,7 +61,8 @@ useSeoMeta({
       :key="index"
       :title="section.title"
       :description="section.description"
-      :align="section.align"
+      :orientation="section.orientation"
+      :reverse="section.reverse"
       :features="section.features"
     >
       <ImagePlaceholder />
