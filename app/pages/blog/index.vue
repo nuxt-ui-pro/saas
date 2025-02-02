@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import type { BlogPost } from '~/types'
-
 const page = await queryCollection('blog').first()
 
-const { data: posts } = await useAsyncData('posts', () => queryContent<BlogPost>('/blog')
-  .where({ _extension: 'md' })
-  .sort({ date: -1 })
-  .find())
+const route = useRoute()
+const { data: posts } = await useAsyncData(route.path, () => {
+  return queryCollection('posts').all()
+})
 
 useSeoMeta({
   title: page.title,

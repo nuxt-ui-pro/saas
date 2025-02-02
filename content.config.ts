@@ -36,6 +36,38 @@ const featureItemSchema = z.object({
 })
 
 export const collections = {
+  docs: defineCollection({
+    type: 'page',
+    source: '1.docs/**/*.md',
+    schema: z.object({
+      title: z.string().nonempty(),
+      description: z.string().nonempty()
+    })
+  }),
+  posts: defineCollection({
+    type: 'page',
+    source: '3.blog/**/*.md',
+    schema: z.object({
+      title: z.string().nonempty(),
+      description: z.string().nonempty(),
+      image: z.object({
+        src: z.string().nonempty()
+      }),
+      authors: z.array(
+        z.object({
+          name: z.string().nonempty(),
+          to: z.string().nonempty(),
+          avatar: z.object({
+            src: z.string().nonempty()
+          })
+        })
+      ),
+      date: z.string().nonempty(),
+      badge: z.object({
+        label: z.string().nonempty()
+      })
+    })
+  }),
   index: defineCollection({
     source: '0.index.yml',
     type: 'data',
