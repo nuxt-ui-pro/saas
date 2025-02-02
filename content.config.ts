@@ -36,9 +36,17 @@ const featureItemSchema = z.object({
 })
 
 export const collections = {
-  content: defineCollection({
+  docs: defineCollection({
     type: 'page',
-    source: '**/*.md',
+    source: '1.docs/**/*.md',
+    schema: z.object({
+      title: z.string().nonempty(),
+      description: z.string().nonempty()
+    })
+  }),
+  posts: defineCollection({
+    type: 'page',
+    source: '3.blog/**/*.md',
     schema: z.object({
       title: z.string().nonempty(),
       description: z.string().nonempty(),
@@ -77,7 +85,7 @@ export const collections = {
       sections: z.array(
         sectionSchema.extend({
           id: z.string().nonempty(),
-          orientation: z.string().nonempty(),
+          orientation: z.enum(['vertical', 'horizontal']).optional(),
           features: z.array(featureItemSchema),
           links: z.array(linkSchema),
           reverse: z.boolean().optional()

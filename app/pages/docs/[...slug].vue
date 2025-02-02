@@ -6,11 +6,11 @@ definePageMeta({
 const route = useRoute()
 
 const { data: page } = await useAsyncData(route.path, () => {
-  return queryCollection('content').path(route.path).first()
+  return queryCollection('docs').path(route.path).first()
 })
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
-  return queryCollectionItemSurroundings('content', route.path, {
+  return queryCollectionItemSurroundings('docs', route.path, {
     fields: ['description']
   })
 })

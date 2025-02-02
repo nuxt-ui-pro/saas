@@ -2,11 +2,11 @@
 const route = useRoute()
 
 const { data: post } = await useAsyncData(route.path, () => {
-  return queryCollection('content').path(route.path).first()
+  return queryCollection('posts').path(route.path).first()
 })
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
-  return queryCollectionItemSurroundings('content', route.path, {
+  return queryCollectionItemSurroundings('posts', route.path, {
     fields: ['description']
   })
 })
