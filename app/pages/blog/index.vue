@@ -3,7 +3,7 @@ const page = await queryCollection('blog').first()
 
 const route = useRoute()
 const { data: posts } = await useAsyncData(route.path, () => {
-  return queryCollection('posts').all()
+  return queryCollection('content').path(route.path).all()
 })
 
 useSeoMeta({

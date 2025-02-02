@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content'
-
-const navigation = inject<Ref<NavItem[]>>('navigation', ref([]))
-
 const items = [{
   label: 'Docs',
   to: '/docs'
@@ -12,6 +8,9 @@ const items = [{
 }, {
   label: 'Blog',
   to: '/blog'
+}, {
+  label: 'Roadmap',
+  to: '/roadmap'
 }]
 </script>
 
