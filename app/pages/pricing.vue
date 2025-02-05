@@ -1,65 +1,75 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('pricing', () => queryContent('/pricing').findOne())
-if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
-}
+const page = await queryCollection('pricing').first()
 
 useSeoMeta({
-  title: page.value.title,
-  ogTitle: page.value.title,
-  description: page.value.description,
-  ogDescription: page.value.description
+  title: page.title,
+  ogTitle: page.title,
+  description: page.description,
+  ogDescription: page.description
 })
 
 defineOgImageComponent('Saas')
 
-const isYearly = ref(false)
+const isYearly = ref('0')
+
+const items = ref([
+  {
+    label: 'Monthly',
+    value: '0'
+  },
+  {
+    label: 'Yearly',
+    value: '1'
+  }
+])
 </script>
 
 <template>
   <div v-if="page">
     <UPageHero v-bind="page.hero">
       <template #links>
-        <UPricingToggle
+        <UTabs
           v-model="isYearly"
-          class="w-48"
+          :items="items"
+          color="neutral"
+          class="w-72"
+          :ui="{ list: 'rounded-full', indicator: 'rounded-full' }"
         />
       </template>
     </UPageHero>
 
     <UContainer>
-      <UPricingGrid>
-        <UPricingCard
+      <UPricingPlans>
+        <UPricingPlan
           v-for="(plan, index) in page.plans"
           :key="index"
           v-bind="plan"
-          :price="isYearly ? plan.price.year : plan.price.month"
-          :cycle="isYearly ? '/year' : '/month'"
+          :price="isYearly === '1' ? plan.price.year : plan.price.month"
+          :billing-cycle="isYearly === '1' ? '/year' : '/month'"
         />
-      </UPricingGrid>
+      </UPricingPlans>
     </UContainer>
 
-    <ULandingSection>
-      <ULandingLogos>
+    <UPageSection>
+      <UPageLogos>
         <UIcon
           v-for="icon in page.logos.icons"
           :key="icon"
           :name="icon"
           class="w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400"
         />
-      </ULandingLogos>
-    </ULandingSection>
+      </UPageLogos>
+    </UPageSection>
 
-    <ULandingSection
+    <UPageSection
       :title="page.faq.title"
       :description="page.faq.description"
     >
-      <ULandingFAQ
+      <UPageAccordion
         :items="page.faq.items"
         multiple
-        default-open
         class="max-w-4xl mx-auto"
       />
-    </ULandingSection>
+    </UPageSection>
   </div>
 </template>

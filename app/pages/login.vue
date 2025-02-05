@@ -29,7 +29,7 @@ const validate = (state: any) => {
 const providers = [{
   label: 'Continue with GitHub',
   icon: 'i-simple-icons-github',
-  color: 'white' as const,
+  color: 'neutral',
   click: () => {
     console.log('Redirect to GitHub')
   }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const links = [{
+const columns = [{
   label: 'Resources',
   children: [{
     label: 'Help center'
@@ -42,52 +42,49 @@ const loading = ref(false)
 function onSubmit() {
   loading.value = true
 
-  setTimeout(() => {
-    toast.add({
-      title: 'Subscribed!',
-      description: 'You\'ve been subscribed to our newsletter.'
-    })
-
-    loading.value = false
-  }, 1000)
+  toast.add({
+    title: 'Subscribed!',
+    description: 'You\'ve been subscribed to our newsletter.'
+  })
 }
 </script>
 
 <template>
-  <UFooter>
+  <USeparator
+    icon="i-simple-icons-nuxtdotjs"
+    class="h-px"
+  />
+  <UFooter :ui="{ top: 'border-b border-[var(--ui-border)]' }">
     <template #top>
-      <UFooterColumns :links="links">
-        <template #right>
-          <form @submit.prevent="onSubmit">
-            <UFormGroup
-              label="Subscribe to our newsletter"
-              :ui="{ container: 'mt-3' }"
-            >
-              <UInput
-                v-model="email"
-                type="email"
-                placeholder="Enter your email"
-                :ui="{ icon: { trailing: { pointer: '' } } }"
-                required
-                size="xl"
-                autocomplete="off"
-                class="max-w-sm"
-                input-class="rounded-full"
+      <UContainer>
+        <UFooterColumns :columns="columns">
+          <template #right>
+            <form @submit.prevent="onSubmit">
+              <UFormField
+                name="email"
+                label="Subscribe to our newsletter"
+                size="lg"
               >
-                <template #trailing>
-                  <UButton
-                    type="submit"
-                    size="xs"
-                    color="primary"
-                    :label="loading ? 'Subscribing' : 'Subscribe'"
-                    :loading="loading"
-                  />
-                </template>
-              </UInput>
-            </UFormGroup>
-          </form>
-        </template>
-      </UFooterColumns>
+                <UInput
+                  v-model="email"
+                  type="email"
+                  class="w-full"
+                  placeholder="Enter your email"
+                >
+                  <template #trailing>
+                    <UButton
+                      type="submit"
+                      size="xs"
+                      color="neutral"
+                      label="Subscribe"
+                    />
+                  </template>
+                </UInput>
+              </UFormField>
+            </form>
+          </template>
+        </UFooterColumns>
+      </UContainer>
     </template>
 
     <template #left>
@@ -104,7 +101,7 @@ function onSubmit() {
         target="_blank"
         icon="i-simple-icons-github"
         aria-label="GitHub"
-        color="gray"
+        color="neutral"
         variant="ghost"
       />
     </template>

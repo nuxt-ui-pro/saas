@@ -1,21 +1,18 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('index', () => queryContent('/').findOne())
-if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
-}
+const page = await queryCollection('index').first()
 
 useSeoMeta({
   titleTemplate: '',
-  title: page.value.title,
-  ogTitle: page.value.title,
-  description: page.value.description,
-  ogDescription: page.value.description
+  title: page.title,
+  ogTitle: page.title,
+  description: page.description,
+  ogDescription: page.description
 })
 </script>
 
 <template>
   <div v-if="page">
-    <ULandingHero
+    <UPageHero
       :title="page.hero.title"
       :description="page.hero.description"
       :links="page.hero.links"
@@ -50,61 +47,64 @@ useSeoMeta({
           />
         </UBadge>
       </template>
-    </ULandingHero>
+    </UPageHero>
 
-    <ULandingSection class="!pt-0">
+    <UPageSection class="!pt-0">
       <ImagePlaceholder />
-    </ULandingSection>
+    </UPageSection>
 
-    <ULandingSection
+    <UPageSection
       v-for="(section, index) in page.sections"
       :key="index"
       :title="section.title"
       :description="section.description"
-      :align="section.align"
+      :orientation="section.orientation"
+      :reverse="section.reverse"
       :features="section.features"
     >
       <ImagePlaceholder />
-    </ULandingSection>
+    </UPageSection>
 
-    <ULandingSection
+    <UPageSection
       :title="page.features.title"
       :description="page.features.description"
     >
       <UPageGrid>
-        <ULandingCard
+        <UPageCard
           v-for="(item, index) in page.features.items"
           :key="index"
           v-bind="item"
         />
       </UPageGrid>
-    </ULandingSection>
+    </UPageSection>
 
-    <ULandingSection
+    <UPageSection
+      id="testimonials"
       :headline="page.testimonials.headline"
       :title="page.testimonials.title"
       :description="page.testimonials.description"
     >
       <UPageColumns class="xl:columns-4">
-        <div
+        <UPageCard
           v-for="(testimonial, index) in page.testimonials.items"
           :key="index"
-          class="break-inside-avoid"
+          variant="subtle"
+          :description="testimonial.quote"
+          :ui="{ description: 'before:content-[open-quote] after:content-[close-quote]' }"
         >
-          <ULandingTestimonial
-            v-bind="testimonial"
-            class="bg-gray-100/50 dark:bg-gray-800/50"
-          />
-        </div>
+          <template #footer>
+            <UUser
+              v-bind="testimonial.user"
+              size="lg"
+            />
+          </template>
+        </UPageCard>
       </UPageColumns>
-    </ULandingSection>
+    </UPageSection>
 
-    <ULandingSection>
-      <ULandingCTA
-        v-bind="page.cta"
-        class="bg-gray-100/50 dark:bg-gray-800/50"
-      />
-    </ULandingSection>
+    <UPageSection>
+      <UPageCTA v-bind="page.cta" />
+    </UPageSection>
   </div>
 </template>
 
@@ -112,14 +112,14 @@ useSeoMeta({
 .landing-grid {
   background-size: 100px 100px;
   background-image:
-    linear-gradient(to right, rgb(var(--color-gray-200)) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(var(--color-gray-200)) 1px, transparent 1px);
+    linear-gradient(to right, var(--ui-bg-elevated) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--ui-bg-elevated) 1px, transparent 1px);
 }
 .dark {
   .landing-grid {
     background-image:
-      linear-gradient(to right, rgb(var(--color-gray-800)) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(var(--color-gray-800)) 1px, transparent 1px);
+      linear-gradient(to right, var(--ui-bg-elevated) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--ui-bg-elevated) 1px, transparent 1px);
   }
 }
 </style>

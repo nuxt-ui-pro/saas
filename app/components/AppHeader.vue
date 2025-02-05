@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content'
-
-const navigation = inject<Ref<NavItem[]>>('navigation', ref([]))
-
-const links = [{
+const items = [{
   label: 'Docs',
   to: '/docs'
 }, {
@@ -12,39 +8,62 @@ const links = [{
 }, {
   label: 'Blog',
   to: '/blog'
+}, {
+  label: 'Roadmap',
+  to: '/roadmap'
 }]
 </script>
 
 <template>
-  <UHeader :links="links">
-    <template #logo>
-      Nuxt UI Pro <UBadge
-        label="SaaS"
-        variant="subtle"
-        class="mb-0.5"
-      />
+  <UHeader>
+    <template #left>
+      <NuxtLink to="/">
+        <LogoPro class="w-auto h-6 shrink-0" />
+      </NuxtLink>
+      <TemplateMenu />
     </template>
 
+    <UNavigationMenu
+      :items="items"
+      variant="link"
+    />
+
     <template #right>
+      <UColorModeButton />
       <UButton
         label="Sign in"
-        color="gray"
+        color="neutral"
         to="/login"
       />
       <UButton
         label="Sign up"
-        icon="i-heroicons-arrow-right-20-solid"
-        trailing
-        color="black"
-        to="/signup"
+        color="neutral"
+        variant="ghost"
+        trailing-icon="i-lucide-arrow-right"
         class="hidden lg:flex"
       />
     </template>
 
-    <template #panel>
-      <UNavigationTree
-        :links="mapContentNavigation(navigation)"
-        default-open
+    <template #content>
+      <UNavigationMenu
+        :items="items"
+        orientation="vertical"
+        class="-mx-2.5"
+      />
+
+      <USeparator class="my-6" />
+
+      <UButton
+        label="Sign in"
+        color="neutral"
+        block
+        class="mb-3"
+      />
+      <UButton
+        label="Sign up"
+        color="neutral"
+        variant="subtle"
+        block
       />
     </template>
   </UHeader>

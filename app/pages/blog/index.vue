@@ -1,21 +1,16 @@
 <script setup lang="ts">
-import type { BlogPost } from '~/types'
+const page = await queryCollection('blog').first()
 
-const { data: page } = await useAsyncData('blog', () => queryContent('/blog').findOne())
-if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
-}
-
-const { data: posts } = await useAsyncData('posts', () => queryContent<BlogPost>('/blog')
-  .where({ _extension: 'md' })
-  .sort({ date: -1 })
-  .find())
+const route = useRoute()
+const { data: posts } = await useAsyncData(route.path, () => {
+  return queryCollection('posts').all()
+})
 
 useSeoMeta({
-  title: page.value.title,
-  ogTitle: page.value.title,
-  description: page.value.description,
-  ogDescription: page.value.description
+  title: page.title,
+  ogTitle: page.title,
+  description: page.description,
+  ogDescription: page.description
 })
 
 defineOgImageComponent('Saas')
@@ -29,11 +24,11 @@ defineOgImageComponent('Saas')
     />
 
     <UPageBody>
-      <UBlogList>
+      <UBlogPosts>
         <UBlogPost
           v-for="(post, index) in posts"
           :key="index"
-          :to="post._path"
+          :to="post.path"
           :title="post.title"
           :description="post.description"
           :image="post.image"
@@ -46,7 +41,7 @@ defineOgImageComponent('Saas')
             description: 'line-clamp-2'
           }"
         />
-      </UBlogList>
+      </UBlogPosts>
     </UPageBody>
   </UContainer>
 </template>
