@@ -3,6 +3,12 @@ import { defineCollection, z } from '@nuxt/content'
 const variantEnum = z.enum(['solid', 'outline', 'subtle', 'soft', 'ghost', 'link'])
 const colorEnum = z.enum(['primary', 'secondary', 'neutral', 'error', 'warning', 'success', 'info'])
 const sizeEnum = z.enum(['xs', 'sm', 'md', 'lg', 'xl'])
+const orientationEnum = z.enum(['vertical', 'horizontal'])
+
+const baseSchema = {
+  title: z.string().nonempty(),
+  description: z.string().nonempty()
+}
 
 const linkSchema = z.object({
   label: z.string().nonempty(),
@@ -22,17 +28,15 @@ const imageSchema = z.object({
   srcset: z.string().optional()
 })
 
-const sectionSchema = z.object({
-  headline: z.string().optional(),
-  title: z.string().nonempty(),
-  description: z.string().optional(),
-  variant: z.string().optional()
+const featureItemSchema = z.object({
+  ...baseSchema,
+  icon: z.string().nonempty()
 })
 
-const featureItemSchema = z.object({
-  title: z.string().nonempty(),
-  description: z.string().nonempty(),
-  icon: z.string().nonempty()
+const sectionSchema = z.object({
+  headline: z.string().optional(),
+  ...baseSchema,
+  features: z.array(featureItemSchema)
 })
 
 export const collections = {
@@ -50,22 +54,16 @@ export const collections = {
     schema: z.object({
       title: z.string().nonempty(),
       description: z.string().nonempty(),
-      image: z.object({
-        src: z.string().nonempty()
-      }),
+      image: z.object({ src: z.string().nonempty() }),
       authors: z.array(
         z.object({
           name: z.string().nonempty(),
           to: z.string().nonempty(),
-          avatar: z.object({
-            src: z.string().nonempty()
-          })
+          avatar: z.object({ src: z.string().nonempty() })
         })
       ),
       date: z.string().nonempty(),
-      badge: z.object({
-        label: z.string().nonempty()
-      })
+      badge: z.object({ label: z.string().nonempty() })
     })
   }),
   index: defineCollection({
@@ -85,17 +83,15 @@ export const collections = {
       sections: z.array(
         sectionSchema.extend({
           id: z.string().nonempty(),
-          orientation: z.enum(['vertical', 'horizontal']).optional(),
+          orientation: orientationEnum.optional(),
           features: z.array(featureItemSchema),
           links: z.array(linkSchema),
           reverse: z.boolean().optional()
         })
       ),
-      features: z.array(
-        sectionSchema.extend({
-          items: z.array(featureItemSchema)
-        })
-      ),
+      features: sectionSchema.extend({
+        items: z.array(featureItemSchema)
+      }),
       testimonials: sectionSchema.extend({
         items: z.array(
           z.object({
