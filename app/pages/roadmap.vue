@@ -6,7 +6,7 @@ useSeoMeta({
   ogDescription: 'Roadmap of Nuxt UI Pro SaaS template.'
 })
 
-defineOgImageComponent('Docs')
+defineOgImageComponent('Saas')
 
 const appConfig = useAppConfig()
 const colorMode = useColorMode()

@@ -71,7 +71,7 @@ if (post.value.image?.src) {
     <UPage>
       <UPageBody>
         <ContentRenderer
-          v-if="post.body"
+          v-if="post"
           :value="post"
         />
 
