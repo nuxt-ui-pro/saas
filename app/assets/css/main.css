@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "@nuxt/ui-pro";
 
+@source "../../../content/**/*";
+
 @theme {
   --font-sans: 'Public Sans', sans-serif;
 
