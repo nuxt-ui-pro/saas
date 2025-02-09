@@ -42,7 +42,7 @@ const sectionSchema = z.object({
 export const collections = {
   docs: defineCollection({
     type: 'page',
-    source: '1.docs/**/*.md',
+    source: '1.docs/**/*',
     schema: z.object({
       title: z.string().nonempty(),
       description: z.string().nonempty()
@@ -50,7 +50,7 @@ export const collections = {
   }),
   posts: defineCollection({
     type: 'page',
-    source: '3.blog/**/*.md',
+    source: '3.blog/**/*',
     schema: z.object({
       title: z.string().nonempty(),
       description: z.string().nonempty(),
