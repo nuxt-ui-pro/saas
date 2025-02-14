@@ -29,10 +29,7 @@ const validate = (state: any) => {
 const providers = [{
   label: 'Continue with GitHub',
   icon: 'i-simple-icons-github',
-  color: 'neutral',
-  click: () => {
-    console.log('Redirect to GitHub')
-  }
+  onClick: () => console.log('Redirect to GitHub')
 }]
 
 function onSubmit(data: any) {
@@ -43,38 +40,35 @@ function onSubmit(data: any) {
 <!-- eslint-disable vue/multiline-html-element-content-newline -->
 <!-- eslint-disable vue/singleline-html-element-content-newline -->
 <template>
-  <UCard class="max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur">
+  <UPageCard class="max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur">
     <UAuthForm
       :fields="fields"
       :validate="validate"
       :providers="providers"
       title="Welcome back"
-      align="top"
       icon="i-lucide-lock"
-      :ui="{ base: 'text-center', footer: 'text-center' }"
-      :submit-button="{ trailingIcon: 'i-lucide-arrow-right' }"
       @submit="onSubmit"
     >
       <template #description>
-        Don't have an account? <NuxtLink
+        Don't have an account? <ULink
           to="/signup"
-          class="text-primary font-medium"
-        >Sign up</NuxtLink>.
+          class="text-primary-500 font-medium"
+        >Sign up</ULink>.
       </template>
 
       <template #password-hint>
-        <NuxtLink
+        <ULink
           to="/"
-          class="text-primary font-medium"
-        >Forgot password?</NuxtLink>
+          class="text-primary-500 font-medium"
+        >Forgot password?</ULink>
       </template>
 
       <template #footer>
-        By signing in, you agree to our <NuxtLink
+        By signing in, you agree to our <ULink
           to="/"
-          class="text-primary font-medium"
-        >Terms of Service</NuxtLink>.
+          class="text-primary-500 font-medium"
+        >Terms of Service</ULink>.
       </template>
     </UAuthForm>
-  </UCard>
+  </UPageCard>
 </template>

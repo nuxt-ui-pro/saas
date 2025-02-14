@@ -34,8 +34,7 @@ const validate = (state: any) => {
 const providers = [{
   label: 'Continue with GitHub',
   icon: 'i-simple-icons-github',
-  color: 'gray' as const,
-  click: () => {
+  onClick: () => {
     console.log('Redirect to GitHub')
   }
 }]
@@ -48,30 +47,28 @@ function onSubmit(data: any) {
 <!-- eslint-disable vue/multiline-html-element-content-newline -->
 <!-- eslint-disable vue/singleline-html-element-content-newline -->
 <template>
-  <UCard class="max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur">
+  <UPageCard class="max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur">
     <UAuthForm
       :fields="fields"
       :validate="validate"
       :providers="providers"
-      align="top"
       title="Create an account"
-      :ui="{ base: 'text-center', footer: 'text-center' }"
-      :submit-button="{ label: 'Create account' }"
+      :submit="{ label: 'Create account' }"
       @submit="onSubmit"
     >
       <template #description>
-        Already have an account? <NuxtLink
+        Already have an account? <ULink
           to="/login"
-          class="text-primary font-medium"
-        >Login</NuxtLink>.
+          class="text-primary-500 font-medium"
+        >Login</ULink>.
       </template>
 
       <template #footer>
-        By signing up, you agree to our <NuxtLink
+        By signing up, you agree to our <ULink
           to="/"
-          class="text-primary font-medium"
-        >Terms of Service</NuxtLink>.
+          class="text-primary-500 font-medium"
+        >Terms of Service</ULink>.
       </template>
     </UAuthForm>
-  </UCard>
+  </UPageCard>
 </template>
