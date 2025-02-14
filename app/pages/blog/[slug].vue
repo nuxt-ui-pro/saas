@@ -13,8 +13,7 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () => qu
   .where({ _extension: 'md' })
   .without(['body', 'excerpt'])
   .sort({ date: -1 })
-  .findSurround(withoutTrailingSlash(route.path))
-, { default: () => [] })
+  .findSurround(withoutTrailingSlash(route.path)), { default: () => [] })
 
 const title = post.value.head?.title || post.value.title
 const description = post.value.head?.description || post.value.description
