@@ -44,31 +44,27 @@ function onSubmit(data: any) {
 }
 </script>
 
-<!-- eslint-disable vue/multiline-html-element-content-newline -->
-<!-- eslint-disable vue/singleline-html-element-content-newline -->
 <template>
-  <UPageCard class="max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur">
-    <UAuthForm
-      :fields="fields"
-      :validate="validate"
-      :providers="providers"
-      title="Create an account"
-      :submit="{ label: 'Create account' }"
-      @submit="onSubmit"
-    >
-      <template #description>
-        Already have an account? <ULink
-          to="/login"
-          class="text-primary-500 font-medium"
-        >Login</ULink>.
-      </template>
+  <UAuthForm
+    :fields="fields"
+    :validate="validate"
+    :providers="providers"
+    title="Create an account"
+    :submit="{ label: 'Create account' }"
+    @submit="onSubmit"
+  >
+    <template #description>
+      Already have an account? <ULink
+        to="/login"
+        class="text-primary-500 font-medium"
+      >Login</ULink>.
+    </template>
 
-      <template #footer>
-        By signing up, you agree to our <ULink
-          to="/"
-          class="text-primary-500 font-medium"
-        >Terms of Service</ULink>.
-      </template>
-    </UAuthForm>
-  </UPageCard>
+    <template #footer>
+      By signing up, you agree to our <ULink
+        to="/"
+        class="text-primary-500 font-medium"
+      >Terms of Service</ULink>.
+    </template>
+  </UAuthForm>
 </template>

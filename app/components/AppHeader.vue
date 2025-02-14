@@ -33,14 +33,15 @@ const items = [{
       <UButton
         label="Sign in"
         color="neutral"
+        variant="ghost"
         to="/login"
       />
       <UButton
         label="Sign up"
         color="neutral"
-        variant="ghost"
         trailing-icon="i-lucide-arrow-right"
         class="hidden lg:flex"
+        to="/signup"
       />
     </template>
 
@@ -56,13 +57,15 @@ const items = [{
       <UButton
         label="Sign in"
         color="neutral"
+        variant="subtle"
+        to="/login"
         block
         class="mb-3"
       />
       <UButton
         label="Sign up"
         color="neutral"
-        variant="subtle"
+        to="/signup"
         block
       />
     </template>

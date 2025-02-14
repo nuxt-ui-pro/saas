@@ -37,38 +37,34 @@ function onSubmit(data: any) {
 }
 </script>
 
-<!-- eslint-disable vue/multiline-html-element-content-newline -->
-<!-- eslint-disable vue/singleline-html-element-content-newline -->
 <template>
-  <UPageCard class="max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur">
-    <UAuthForm
-      :fields="fields"
-      :validate="validate"
-      :providers="providers"
-      title="Welcome back"
-      icon="i-lucide-lock"
-      @submit="onSubmit"
-    >
-      <template #description>
-        Don't have an account? <ULink
-          to="/signup"
-          class="text-primary-500 font-medium"
-        >Sign up</ULink>.
-      </template>
+  <UAuthForm
+    :fields="fields"
+    :validate="validate"
+    :providers="providers"
+    title="Welcome back"
+    icon="i-lucide-lock"
+    @submit="onSubmit"
+  >
+    <template #description>
+      Don't have an account? <ULink
+        to="/signup"
+        class="text-primary-500 font-medium"
+      >Sign up</ULink>.
+    </template>
 
-      <template #password-hint>
-        <ULink
-          to="/"
-          class="text-primary-500 font-medium"
-        >Forgot password?</ULink>
-      </template>
+    <template #password-hint>
+      <ULink
+        to="/"
+        class="text-primary-500 font-medium"
+      >Forgot password?</ULink>
+    </template>
 
-      <template #footer>
-        By signing in, you agree to our <ULink
-          to="/"
-          class="text-primary-500 font-medium"
-        >Terms of Service</ULink>.
-      </template>
-    </UAuthForm>
-  </UPageCard>
+    <template #footer>
+      By signing in, you agree to our <ULink
+        to="/"
+        class="text-primary-500 font-medium"
+      >Terms of Service</ULink>.
+    </template>
+  </UAuthForm>
 </template>
