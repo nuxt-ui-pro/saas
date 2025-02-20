@@ -47,6 +47,7 @@ useSeoMeta({
           v-for="(item, index) in page.features.items"
           :key="index"
           v-bind="item"
+          spotlight
         />
       </UPageGrid>
     </UPageSection>
