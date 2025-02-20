@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { ParsedContent } from '@nuxt/content'
 import type { NuxtError } from '#app'
 
 defineProps({
@@ -20,10 +19,26 @@ useSeoMeta({
   description: 'We are sorry but this page could not be found.'
 })
 
-const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation(), { default: () => [] })
-const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', { default: () => [], server: false })
+const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'), {
+  transform: data => data.find(item => item.path === '/docs')?.children || []
+})
+const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
+  server: false
+})
 
-provide('navigation', navigation)
+const links = [{
+  label: 'Docs',
+  icon: 'i-lucide-book',
+  to: '/docs/getting-started'
+}, {
+  label: 'Pricing',
+  icon: 'i-lucide-credit-card',
+  to: '/pricing'
+}, {
+  label: 'Blog',
+  icon: 'i-lucide-pencil',
+  to: '/blog'
+}]
 </script>
 
 <template>
@@ -33,7 +48,7 @@ provide('navigation', navigation)
     <UMain>
       <UContainer>
         <UPage>
-          <UPageError :error="error" />
+          <UError :error="error" />
         </UPage>
       </UContainer>
     </UMain>
@@ -43,10 +58,13 @@ provide('navigation', navigation)
     <ClientOnly>
       <LazyUContentSearch
         :files="files"
+        shortcut="meta_k"
         :navigation="navigation"
+        :links="links"
+        :fuse="{ resultLimit: 42 }"
       />
     </ClientOnly>
 
-    <UNotifications />
+    <UToaster />
   </div>
 </template>

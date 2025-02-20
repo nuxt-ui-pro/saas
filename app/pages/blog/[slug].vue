@@ -1,22 +1,18 @@
 <script setup lang="ts">
-import { withoutTrailingSlash } from 'ufo'
-import type { BlogPost } from '~/types'
-
 const route = useRoute()
 
-const { data: post } = await useAsyncData(route.path, () => queryContent<BlogPost>(route.path).findOne())
-if (!post.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Post not found', fatal: true })
-}
+const { data: post } = await useAsyncData(route.path, () => {
+  return queryCollection('posts').path(route.path).first()
+})
 
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () => queryContent('/blog')
-  .where({ _extension: 'md' })
-  .without(['body', 'excerpt'])
-  .sort({ date: -1 })
-  .findSurround(withoutTrailingSlash(route.path)), { default: () => [] })
+const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
+  return queryCollectionItemSurroundings('posts', route.path, {
+    fields: ['description']
+  })
+})
 
-const title = post.value.head?.title || post.value.title
-const description = post.value.head?.description || post.value.description
+const title = post.value.title
+const description = post.value.description
 
 useSeoMeta({
   title,
@@ -47,8 +43,8 @@ if (post.value.image?.src) {
           v-bind="post.badge"
           variant="subtle"
         />
-        <span class="text-gray-500 dark:text-gray-400">&middot;</span>
-        <time class="text-gray-500 dark:text-gray-400">{{ new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
+        <span class="text-(--ui-text-muted)">&middot;</span>
+        <time class="text-(--ui-text-muted)">{{ new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
       </template>
 
       <div class="flex flex-wrap items-center gap-3 mt-4">
@@ -56,7 +52,8 @@ if (post.value.image?.src) {
           v-for="(author, index) in post.authors"
           :key="index"
           :to="author.to"
-          color="white"
+          color="neutral"
+          variant="subtle"
           target="_blank"
           size="sm"
         >
@@ -72,22 +69,22 @@ if (post.value.image?.src) {
     </UPageHeader>
 
     <UPage>
-      <UPageBody prose>
+      <UPageBody>
         <ContentRenderer
-          v-if="post && post.body"
+          v-if="post"
           :value="post"
         />
 
-        <hr v-if="surround?.length">
+        <USeparator v-if="surround?.length" />
 
         <UContentSurround :surround="surround" />
       </UPageBody>
 
-      <template #right>
-        <UContentToc
-          v-if="post.body && post.body.toc"
-          :links="post.body.toc.links"
-        />
+      <template
+        v-if="post?.body?.toc?.links?.length"
+        #right
+      >
+        <UContentToc :links="post.body.toc.links" />
       </template>
     </UPage>
   </UContainer>
