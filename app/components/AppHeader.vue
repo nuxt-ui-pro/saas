@@ -11,9 +11,6 @@ const items = computed(() => [{
 }, {
   label: 'Blog',
   to: '/blog'
-}, {
-  label: 'Roadmap',
-  to: '/roadmap'
 }])
 </script>
 

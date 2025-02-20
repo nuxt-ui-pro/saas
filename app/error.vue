@@ -38,10 +38,6 @@ const links = [{
   label: 'Blog',
   icon: 'i-lucide-pencil',
   to: '/blog'
-}, {
-  label: 'Roadmap',
-  icon: 'i-lucide-chart-no-axes-gantt',
-  to: '/roadmap'
 }]
 </script>
 
