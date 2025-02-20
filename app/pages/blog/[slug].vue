@@ -43,8 +43,8 @@ if (post.value.image?.src) {
           v-bind="post.badge"
           variant="subtle"
         />
-        <span class="text-gray-500 dark:text-gray-400">&middot;</span>
-        <time class="text-gray-500 dark:text-gray-400">{{ new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
+        <span class="text-(--ui-text-muted)">&middot;</span>
+        <time class="text-(--ui-text-muted)">{{ new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
       </template>
 
       <div class="flex flex-wrap items-center gap-3 mt-4">

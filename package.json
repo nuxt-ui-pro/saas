@@ -24,7 +24,13 @@
   "devDependencies": {
     "@nuxt/eslint": "^1.0.1",
     "eslint": "^9.20.1",
+    "typescript": "^5.7.3",
     "vue-tsc": "^2.2.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3"
+    ]
   },
   "packageManager": "pnpm@10.4.1"
 }

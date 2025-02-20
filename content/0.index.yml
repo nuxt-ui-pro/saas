@@ -2,25 +2,21 @@ title: Nuxt UI Pro - SaaS template
 description: Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes.
 navigation: false
 hero:
-  title: Build your SaaS in seconds
-  description: This template demonstrates most of Nuxt UI Pro's components. It's a great starting point to build your own SaaS.
-  headline:
-    label: Made with Nuxt UI Pro
-    to: https://ui3.nuxt.dev/getting-started
-    icon: i-lucide-arrow-up-right
+  title: Build your SaaS with Nuxt UI Pro
+  description: Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes. It includes all primitives to build landing pages, documentations, blogs, dashboards or entire SaaS products.
   links:
     - label: Get started
-      to: '/signup'
-      size: xl
-      color: neutral
       icon: i-lucide-arrow-right
       trailing: true
+      to: https://ui3.nuxt.dev/getting-started/installation/pro/nuxt
+      target: _blank
+      size: xl
     - label: Use this template
       icon: i-simple-icons-github
       size: xl
       color: neutral
-      variant: ghost
-      to: https://github.com/nuxt-ui-pro/saas
+      variant: subtle
+      to: https://github.com/nuxt-ui-pro/saas/tree/v3
       target: _blank
 sections:
   - title: The power of our service
@@ -131,11 +127,15 @@ testimonials:
         avatar:
           src: https://i.pravatar.cc/120?img=9
 cta:
-  title: Get started today
-  description: Nisi mollit id aliquip sunt est laborum sit sit.
-  variant: soft
+  title: Start with Nuxt UI Pro today!
+  description: Nuxt UI Pro is free in development, but you need a license to use it in production.
   links:
     - label: Buy now
-      size: xl
-      color: neutral
-      to: /pricing
+      to: 'https://ui.nuxt.com/pro/purchase'
+      target: _blank
+      icon: i-lucide-shopping-cart
+    - label: License
+      to: 'https://ui3.nuxt.dev/getting-started/license'
+      trailingIcon: i-lucide-circle-help
+      target: _blank
+      variant: subtle

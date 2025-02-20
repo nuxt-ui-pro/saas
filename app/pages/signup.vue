@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import * as z from 'zod'
+import type { FormSubmitEvent } from '@nuxt/ui'
+
 definePageMeta({
   layout: 'auth'
 })
@@ -7,47 +10,56 @@ useSeoMeta({
   title: 'Sign up'
 })
 
+const toast = useToast()
+
 const fields = [{
   name: 'name',
-  type: 'text',
+  type: 'text' as const,
   label: 'Name',
   placeholder: 'Enter your name'
 }, {
   name: 'email',
-  type: 'email',
+  type: 'text' as const,
   label: 'Email',
   placeholder: 'Enter your email'
 }, {
   name: 'password',
   label: 'Password',
-  type: 'password',
+  type: 'password' as const,
   placeholder: 'Enter your password'
 }]
 
-const validate = (state: any) => {
-  const errors = []
-  if (!state.email) errors.push({ path: 'email', message: 'Email is required' })
-  if (!state.password) errors.push({ path: 'password', message: 'Password is required' })
-  return errors
-}
-
 const providers = [{
-  label: 'Continue with GitHub',
+  label: 'Google',
+  icon: 'i-simple-icons-google',
+  onClick: () => {
+    toast.add({ title: 'Google', description: 'Login with Google' })
+  }
+}, {
+  label: 'GitHub',
   icon: 'i-simple-icons-github',
   onClick: () => {
-    console.log('Redirect to GitHub')
+    toast.add({ title: 'GitHub', description: 'Login with GitHub' })
   }
 }]
 
-function onSubmit(data: any) {
-  console.log('Submitted', data)
+const schema = z.object({
+  name: z.string().min(1, 'Name is required'),
+  email: z.string().email('Invalid email'),
+  password: z.string().min(8, 'Must be at least 8 characters')
+})
+
+type Schema = z.output<typeof schema>
+
+function onSubmit(payload: FormSubmitEvent<Schema>) {
+  console.log('Submitted', payload)
 }
 </script>
 
 <template>
   <UAuthForm
     :fields="fields"
-    :validate="validate"
+    :schema="schema"
     :providers="providers"
     title="Create an account"
     :submit="{ label: 'Create account' }"

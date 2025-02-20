@@ -39,7 +39,7 @@ const items = ref([
     </UPageHero>
 
     <UContainer>
-      <UPricingPlans>
+      <UPricingPlans scale>
         <UPricingPlan
           v-for="(plan, index) in page.plans"
           :key="index"
@@ -56,7 +56,7 @@ const items = ref([
           v-for="icon in page.logos.icons"
           :key="icon"
           :name="icon"
-          class="w-12 h-12 flex-shrink-0 text-gray-500 dark:text-gray-400"
+          class="w-12 h-12 flex-shrink-0 text-(--ui-text-muted)"
         />
       </UPageLogos>
     </UPageSection>

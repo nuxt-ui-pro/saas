@@ -13,11 +13,20 @@ const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
         <UPage>
           <template #left>
             <UPageAside>
-              <UContentSearchButton
-                label="Search..."
-                variant="subtle"
-                class="mb-6 w-full"
-              />
+              <template #top>
+                <UContentSearchButton
+                  label="Search..."
+                  variant="outline"
+                  class="w-full"
+                >
+                  <template #trailing>
+                    <div class="flex items-center gap-0.5 ms-auto">
+                      <UKbd value="meta" />
+                      <UKbd value="k" />
+                    </div>
+                  </template>
+                </UContentSearchButton>
+              </template>
               <UContentNavigation
                 :navigation="navigation"
                 highlight

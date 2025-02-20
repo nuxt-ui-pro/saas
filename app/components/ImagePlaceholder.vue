@@ -1,8 +1,10 @@
 <template>
-  <div class="bg-neutral-900/5 dark:bg-white/5 ring-1 ring-inset ring-neutral-900/10 dark:ring-white/10 rounded-xl lg:-m-4 p-4">
-    <div class="aspect-video rounded-lg relative overflow-hidden border-1 border-dashed border-neutral-900/10 dark:border-white/10">
+  <UPageCard
+    variant="subtle"
+  >
+    <div class="relative overflow-hidden rounded-(--ui-radius) border border-dashed border-(--ui-border-accented) opacity-75 px-4 flex items-center justify-center aspect-video">
       <svg
-        class="absolute inset-0 size-full stroke-neutral-900/10 dark:stroke-white/10"
+        class="absolute inset-0 h-full w-full stroke-(--ui-border-inverted)/10"
         fill="none"
       >
         <defs>
@@ -24,6 +26,8 @@
           height="100%"
         />
       </svg>
+
+      <slot />
     </div>
-  </div>
+  </UPageCard>
 </template>

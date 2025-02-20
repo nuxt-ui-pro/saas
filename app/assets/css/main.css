@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "@nuxt/ui-pro";
 
-@source "../../../content/**/*";
+@source "../../../content";
 
 @theme {
   --font-sans: 'Public Sans', sans-serif;
@@ -17,4 +17,8 @@
   --color-green-800: #016538;
   --color-green-900: #0A5331;
   --color-green-950: #052E16;
+}
+
+.dark {
+  --ui-bg: var(--ui-color-neutral-950);
 }

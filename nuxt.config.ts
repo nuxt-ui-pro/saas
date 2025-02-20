@@ -4,9 +4,7 @@ export default defineNuxtConfig({
     '@nuxt/ui-pro',
     '@nuxt/content',
     '@nuxt/eslint',
-    '@nuxt/fonts',
     '@nuxt/image',
-    '@nuxt/ui',
     '@vueuse/nuxt',
     'nuxt-og-image'
   ],
@@ -16,10 +14,6 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
-
-  colorMode: {
-    disableTransition: true
-  },
 
   content: {
     preview: {
@@ -49,15 +43,6 @@ export default defineNuxtConfig({
 
   typescript: {
     strict: false
-  },
-
-  hooks: {
-    // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
-    'components:extend': (components) => {
-      const globals = components.filter(c => ['UButton'].includes(c.pascalName))
-
-      globals.forEach(c => c.global = true)
-    }
   },
 
   eslint: {

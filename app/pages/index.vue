@@ -17,41 +17,14 @@ useSeoMeta({
       :description="page.hero.description"
       :links="page.hero.links"
     >
-      <div class="absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" />
+      <template #top>
+        <div class="absolute rounded-full dark:bg-(--ui-primary) blur-[300px] size-60 sm:size-80 transform -translate-x-1/2 left-1/2 -translate-y-80" />
 
-      <template #headline>
-        <UBadge
-          v-if="page.hero.headline"
-          variant="subtle"
-          size="lg"
-          class="relative rounded-full font-semibold"
-        >
-          <NuxtLink
-            :to="page.hero.headline.to"
-            target="_blank"
-            class="focus:outline-none"
-            tabindex="-1"
-          >
-            <span
-              class="absolute inset-0"
-              aria-hidden="true"
-            />
-          </NuxtLink>
-
-          {{ page.hero.headline.label }}
-
-          <UIcon
-            v-if="page.hero.headline.icon"
-            :name="page.hero.headline.icon"
-            class="ml-1 w-4 h-4 pointer-events-none"
-          />
-        </UBadge>
+        <StarsBg />
       </template>
-    </UPageHero>
 
-    <UPageSection class="!pt-0">
-      <ImagePlaceholder />
-    </UPageSection>
+      <PromotionalVideo />
+    </UPageHero>
 
     <UPageSection
       v-for="(section, index) in page.sections"
@@ -102,24 +75,16 @@ useSeoMeta({
       </UPageColumns>
     </UPageSection>
 
-    <UPageSection>
-      <UPageCTA v-bind="page.cta" />
-    </UPageSection>
+    <USeparator />
+
+    <UPageCTA
+      v-bind="page.cta"
+      variant="naked"
+      class="overflow-hidden"
+    >
+      <div class="absolute rounded-full dark:bg-(--ui-primary) blur-[250px] size-40 sm:size-50 transform -translate-x-1/2 left-1/2 -translate-y-80" />
+
+      <StarsBg />
+    </UPageCTA>
   </div>
 </template>
-
-<style scoped>
-.landing-grid {
-  background-size: 100px 100px;
-  background-image:
-    linear-gradient(to right, var(--ui-bg-elevated) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--ui-bg-elevated) 1px, transparent 1px);
-}
-.dark {
-  .landing-grid {
-    background-image:
-      linear-gradient(to right, var(--ui-bg-elevated) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--ui-bg-elevated) 1px, transparent 1px);
-  }
-}
-</style>

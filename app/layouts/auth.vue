@@ -1,21 +1,18 @@
-<script setup lang="ts">
-useHead({
-  bodyAttrs: {
-    class: 'dark:bg-neutral-950'
-  }
-})
-</script>
-
 <template>
   <div class="h-screen flex items-center justify-center overlay">
     <UButton
-      icon="i-lucide-home"
-      label="Home"
+      icon="i-lucide-chevron-left"
       to="/"
+      size="xl"
       color="neutral"
-      class="absolute top-4"
+      variant="subtle"
+      class="absolute left-8 top-8 rounded-full"
     />
-    <UPageCard class="max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur">
+
+    <UPageCard
+      variant="subtle"
+      class="max-w-sm w-full"
+    >
       <slot />
     </UPageCard>
   </div>

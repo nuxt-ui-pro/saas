@@ -37,6 +37,7 @@ defineOgImageComponent('Saas')
           :badge="post.badge"
           :orientation="index === 0 ? 'horizontal' : 'vertical'"
           :class="[index === 0 && 'col-span-full']"
+          variant="naked"
           :ui="{
             description: 'line-clamp-2'
           }"

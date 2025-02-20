@@ -1,7 +1,10 @@
 <script setup lang="ts">
-const items = [{
+const route = useRoute()
+
+const items = computed(() => [{
   label: 'Docs',
-  to: '/docs'
+  to: '/docs',
+  active: route.path.startsWith('/docs')
 }, {
   label: 'Pricing',
   to: '/pricing'
@@ -11,7 +14,7 @@ const items = [{
 }, {
   label: 'Roadmap',
   to: '/roadmap'
-}]
+}])
 </script>
 
 <template>
@@ -45,7 +48,7 @@ const items = [{
       />
     </template>
 
-    <template #content>
+    <template #body>
       <UNavigationMenu
         :items="items"
         orientation="vertical"
