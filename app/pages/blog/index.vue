@@ -1,16 +1,14 @@
 <script setup lang="ts">
-const page = await queryCollection('blog').first()
-
 const route = useRoute()
-const { data: posts } = await useAsyncData(route.path, () => {
-  return queryCollection('posts').all()
-})
+
+const { data: page } = await useAsyncData('blog', () => queryCollection('blog').first())
+const { data: posts } = await useAsyncData(route.path, () => queryCollection('posts').all())
 
 useSeoMeta({
-  title: page.title,
-  ogTitle: page.title,
-  description: page.description,
-  ogDescription: page.description
+  title: page.value?.title,
+  ogTitle: page.value?.title,
+  description: page.value?.description,
+  ogDescription: page.value?.description
 })
 
 defineOgImageComponent('Saas')

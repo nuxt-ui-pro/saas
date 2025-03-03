@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const page = await queryCollection('pricing').first()
+const { data: page } = await useAsyncData('pricing', () => queryCollection('pricing').first())
 
 useSeoMeta({
-  title: page.title,
-  ogTitle: page.title,
-  description: page.description,
-  ogDescription: page.description
+  title: page.value?.title,
+  ogTitle: page.value?.title,
+  description: page.value?.description,
+  ogDescription: page.value?.description
 })
 
 defineOgImageComponent('Saas')
