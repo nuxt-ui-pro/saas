@@ -19,7 +19,7 @@
     "@nuxt/ui-pro": "3.0.0-beta.3",
     "@vueuse/nuxt": "^12.8.2",
     "nuxt": "^3.16.0",
-    "nuxt-og-image": "^4.2.0"
+    "nuxt-og-image": "^5.0.1"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.1.0",
