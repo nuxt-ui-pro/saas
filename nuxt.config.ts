@@ -41,10 +41,6 @@ export default defineNuxtConfig({
     }
   },
 
-  typescript: {
-    strict: false
-  },
-
   eslint: {
     config: {
       stylistic: {
