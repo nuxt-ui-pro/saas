@@ -15,12 +15,6 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
-  content: {
-    preview: {
-      api: 'https://api.nuxt.studio'
-    }
-  },
-
   routeRules: {
     '/docs': { redirect: '/docs/getting-started', prerender: false }
   },
