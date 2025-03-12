@@ -8,7 +8,7 @@ hero:
     - label: Get started
       icon: i-lucide-arrow-right
       trailing: true
-      to: https://ui3.nuxt.dev/getting-started/installation/pro/nuxt
+      to: https://ui.nuxt.com/getting-started/installation/pro/nuxt
       target: _blank
       size: xl
     - label: Use this template
@@ -16,7 +16,7 @@ hero:
       size: xl
       color: neutral
       variant: subtle
-      to: https://github.com/nuxt-ui-pro/saas/tree/v3
+      to: https://github.com/nuxt-ui-pro/saas
       target: _blank
 sections:
   - title: Enterprise-Grade Solutions
@@ -143,7 +143,7 @@ cta:
       target: _blank
       icon: i-lucide-shopping-cart
     - label: License
-      to: 'https://ui3.nuxt.dev/getting-started/license'
+      to: 'https://ui.nuxt.com/getting-started/license'
       trailingIcon: i-lucide-circle-help
       target: _blank
       variant: subtle
