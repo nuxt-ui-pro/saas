@@ -90,35 +90,25 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 ## Nuxt Studio integration
 
-Add `@nuxthq/studio` dependency to your package.json:
+Studio is an intuitive CMS interface to edit your Nuxt Content websites.
 
-```bash
-# npm
-npm install --save-dev @nuxthq/studio
+It take advantage of the Preview API included in Nuxt Content to propose the best editing experience for your content files. Editors can benefit from a user-friendly interface to edit their Markdown, YAML or JSON files.
 
-# pnpm
-pnpm add -D @nuxthq/studio
+You can import your project on the platform without any extra setup.
 
-# yarn
-yarn add -D @nuxthq/studio
+However to enable the live preview on the platform, you just need to activate studio in the content configuration of your `nuxt.config.ts` file.
 
-# bun
-bun add -d @nuxthq/studio
-```
-
-Add this module to your `nuxt.config.ts`:
-
-```ts
+```ts [nuxt.config.ts]
 export default defineNuxtConfig({
-  ...
-  modules: [
-    ...
-    '@nuxthq/studio'
-  ]
+  content: {
+    preview: {
+      api: 'https://api.nuxt.studio'
+    }
+  }
 })
 ```
 
-Read more on [Nuxt Studio docs](https://nuxt.studio/docs/get-started/setup).
+Read more on [Nuxt Studio docs](https://content.nuxt.com/studio/setup).
 
 ## Renovate integration
 
