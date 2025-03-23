@@ -17,18 +17,20 @@
     "@nuxt/content": "^3.4.0",
     "@nuxt/image": "^1.10.0",
     "@nuxt/ui-pro": "^3.0.1",
+    "@standard-schema/spec": "^1.0.0",
     "@vueuse/nuxt": "^13.0.0",
     "nuxt": "^3.16.1",
-    "nuxt-og-image": "^5.0.5"
+    "nuxt-og-image": "^5.0.5",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.2.0",
     "eslint": "^9.22.0",
     "typescript": "^5.8.2",
-    "vue-tsc": "^2.2.2"
+    "vue-tsc": "^2.2.0"
   },
   "resolutions": {
-    "vue-tsc": "2.2.2"
+    "vue-tsc": "2.2.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
