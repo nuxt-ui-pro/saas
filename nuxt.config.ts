@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    '@nuxt/ui-pro',
-    '@nuxt/content',
     '@nuxt/eslint',
     '@nuxt/image',
+    '@nuxt/ui-pro',
+    '@nuxt/content',
     '@vueuse/nuxt',
     'nuxt-og-image'
   ],
@@ -28,8 +28,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: [
-        '/',
-        '/docs'
+        '/'
       ],
       crawlLinks: true
     }
