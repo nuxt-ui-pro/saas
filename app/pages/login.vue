@@ -75,6 +75,7 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
       <ULink
         to="/"
         class="text-(--ui-primary) font-medium"
+        tabindex="-1"
       >Forgot password?</ULink>
     </template>
 
