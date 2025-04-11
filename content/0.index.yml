@@ -1,9 +1,10 @@
-title: Nuxt UI Pro - SaaS template
-description: Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes.
+seo:
+  title: Nuxt UI Pro - SaaS template
+  description: Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes.
 navigation: false
+title: Build your SaaS with Nuxt UI Pro
+description: Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes. It includes all primitives to build landing pages, documentations, blogs, dashboards or entire SaaS products.
 hero:
-  title: Build your SaaS with Nuxt UI Pro
-  description: Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes. It includes all primitives to build landing pages, documentations, blogs, dashboards or entire SaaS products.
   links:
     - label: Get started
       icon: i-lucide-arrow-right
