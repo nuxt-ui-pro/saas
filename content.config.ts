@@ -98,10 +98,6 @@ export const collections = {
     source: '2.pricing.yml',
     type: 'page',
     schema: z.object({
-      hero: z.object({
-        title: z.string().nonempty(),
-        description: z.string().nonempty()
-      }),
       plans: z.array(
         z.object({
           title: z.string().nonempty(),
