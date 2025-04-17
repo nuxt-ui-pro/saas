@@ -58,9 +58,9 @@ export const collections = {
     type: 'page',
     schema: z.object({
       toggle: z.boolean().optional(),
-      hero: createBaseSchema().extend({
+      hero: z.object(({
         links: z.array(createLinkSchema())
-      }),
+      })),
       sections: z.array(
         createBaseSchema().extend({
           id: z.string().nonempty(),
