@@ -1,6 +1,6 @@
 ---
-title: 'The Rise of Cryptocurrencies'
-description: "Transforming Finance and Economy"
+title: The Rise of Cryptocurrencies
+description: Transforming Finance and Economy
 image:
   src: https://picsum.photos/id/1048/640/360
 authors:
@@ -15,7 +15,7 @@ badge:
 
 In recent years, cryptocurrencies have emerged as a disruptive force in the world of finance and economics. Born out of the decentralized ethos of blockchain technology, cryptocurrencies have challenged traditional financial systems, offering new avenues for investment, transactions, and economic empowerment. This article explores the impact of cryptocurrencies on the economy and finance, examining their evolution, opportunities, and challenges.
 
-![computer](https://picsum.photos/id/3/1000/600){ width="1000" height="600" .rounded-lg }
+![computer](https://picsum.photos/id/3/1000/600){.rounded-lg height="600" width="1000"}
 
 ## The Evolution of Cryptocurrencies
 
@@ -28,11 +28,8 @@ Since then, thousands of cryptocurrencies, including Ethereum, Ripple, and Litec
 Cryptocurrencies present numerous opportunities for individuals, businesses, and economies:
 
 - **Financial Inclusion:** Cryptocurrencies offer financial services to the unbanked and underbanked populations, bypassing traditional banking infrastructure and reducing transaction costs.
-
 - **Decentralized Finance (DeFi):** DeFi platforms leverage blockchain technology to provide decentralized alternatives to traditional financial services, including lending, borrowing, and trading, without intermediaries.
-
 - **Investment Diversification:** Cryptocurrencies serve as a hedge against traditional assets, providing diversification benefits and offering exposure to a nascent asset class with high growth potential.
-
 - **Technological Innovation:** The underlying blockchain technology of cryptocurrencies has applications beyond finance, including supply chain management, healthcare, and voting systems, driving innovation across industries.
 
 ## 📉 Challenges and Risks
@@ -40,73 +37,74 @@ Cryptocurrencies present numerous opportunities for individuals, businesses, and
 Despite their potential, cryptocurrencies also face challenges and risks that warrant attention:
 
 - **Volatility:** Cryptocurrency markets are characterized by high volatility, subject to speculative trading, market manipulation, and sudden price fluctuations, posing risks to investors and stability.
-
 - **Regulatory Uncertainty:** Governments and regulatory bodies worldwide are grappling with the regulation of cryptocurrencies, raising concerns about legal compliance, taxation, and investor protection.
-
 - **Security Concerns:** Cryptocurrency exchanges and wallets are vulnerable to cyber attacks, theft, and fraud, necessitating robust security measures and risk management practices.
-
 - **Environmental Impact:** The energy-intensive mining process of cryptocurrencies, particularly Bitcoin, raises environmental concerns due to its carbon footprint and energy consumption.
-
 
 ## Here are the most well-known cryptocurrencies
 
 These cryptocurrencies are among the most recognized and widely used in the cryptocurrency ecosystem, each with its unique features and use cases.
 
 ::card-group
-  ::card
+  :::card
   ---
-  icon: 'i-simple-icons-bitcoin'
+  icon: i-simple-icons-bitcoin
+  target: _blank
   title: Bitcoin (BTC)
-  to: 'https://bitcoin.org/'
-  target: '_blank'
+  to: https://bitcoin.org/
   ---
   The first and most famous cryptocurrency, often considered a digital store of value and widely used as a medium of exchange.
-  ::
-  ::card
+  :::
+
+  :::card
   ---
-  icon: 'i-simple-icons-ethereum'
+  icon: i-simple-icons-ethereum
+  target: _blank
   title: Ethereum (ETH)
-  to: 'https://ethereum.org'
-  target: '_blank'
+  to: https://ethereum.org
   ---
   A blockchain platform enabling developers to create smart contracts and decentralized applications (DApps).
-  ::
-  ::card
+  :::
+
+  :::card
   ---
-  icon: 'i-simple-icons-ripple'
+  icon: i-simple-icons-ripple
+  target: _blank
   title: Ripple (XRP)
-  to: 'https://ripple.com/'
-  target: '_blank'
+  to: https://ripple.com/
   ---
   Focused on providing fast and inexpensive global payment solutions, especially for interbank transactions and cross-border payments.
-  ::
-  ::card
+  :::
+
+  :::card
   ---
-  icon: 'i-simple-icons-litecoin'
+  icon: i-simple-icons-litecoin
+  target: _blank
   title: Litecoin (LTC)
-  to: 'https://litecoin.com//'
-  target: '_blank'
+  to: https://litecoin.com//
   ---
   Known for faster transaction times and a more decentralized approach compared to Bitcoin.
-  ::
-  ::card
+  :::
+
+  :::card
   ---
-  icon: 'i-simple-icons-bitcoincash'
+  icon: i-simple-icons-bitcoincash
+  target: _blank
   title: Bitcoin Cash (BCH)
-  to: 'https://bitcoincash.org'
-  target: '_blank'
+  to: https://bitcoincash.org
   ---
   A fork of Bitcoin aimed at improving scalability and transaction processing capabilities.
-  ::
-  ::card
+  :::
+
+  :::card
   ---
-  icon: 'i-simple-icons-cardano'
+  icon: i-simple-icons-cardano
+  target: _blank
   title: Cardano (ADA)
-  to: 'https://cardano.org/'
-  target: '_blank'
+  to: https://cardano.org/
   ---
   A blockchain platform designed for enhanced security and scalability, supporting smart contract and DApp development.
-  ::
+  :::
 ::
 
 ## Conclusion
