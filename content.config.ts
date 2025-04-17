@@ -41,8 +41,6 @@ export const collections = {
     type: 'page',
     source: '3.blog/**/*',
     schema: z.object({
-      title: z.string().nonempty(),
-      description: z.string().nonempty(),
       image: z.object({ src: z.string().nonempty() }),
       authors: z.array(
         z.object({
@@ -51,7 +49,7 @@ export const collections = {
           avatar: z.object({ src: z.string().nonempty() })
         })
       ),
-      date: z.string().nonempty(),
+      date: z.date(),
       badge: z.object({ label: z.string().nonempty() })
     })
   }),
