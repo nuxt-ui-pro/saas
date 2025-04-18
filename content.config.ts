@@ -11,13 +11,13 @@ const createBaseSchema = () => z.object({
 })
 
 const createFeatureItemSchema = () => createBaseSchema().extend({
-  icon: z.string().nonempty()
+  icon: z.string().nonempty().editor({ input: 'icon' })
 })
 
 const createLinkSchema = () => z.object({
   label: z.string().nonempty(),
   to: z.string().nonempty(),
-  icon: z.string().optional(),
+  icon: z.string().optional().editor({ input: 'icon' }),
   size: sizeEnum.optional(),
   trailing: z.boolean().optional(),
   target: z.string().optional(),
@@ -26,7 +26,7 @@ const createLinkSchema = () => z.object({
 })
 
 const createImageSchema = () => z.object({
-  src: z.string().nonempty(),
+  src: z.string().nonempty().editor({ input: 'media' }),
   alt: z.string().optional(),
   loading: z.string().optional(),
   srcset: z.string().optional()
@@ -41,12 +41,12 @@ export const collections = {
     type: 'page',
     source: '3.blog/**/*',
     schema: z.object({
-      image: z.object({ src: z.string().nonempty() }),
+      image: z.object({ src: z.string().nonempty().editor({ input: 'media' }) }),
       authors: z.array(
         z.object({
           name: z.string().nonempty(),
           to: z.string().nonempty(),
-          avatar: z.object({ src: z.string().nonempty() })
+          avatar: z.object({ src: z.string().nonempty().editor({ input: 'media' }) })
         })
       ),
       date: z.date(),
