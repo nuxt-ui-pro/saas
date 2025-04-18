@@ -1,0 +1,71 @@
+
+name: studio-nuxt-build
+run-name: studio nuxt build
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches:
+      - 'main'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Add write workflow permissions
+permissions:
+  contents: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Build job
+  build-and-deploy:
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: .
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [20]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Identify package manager
+        id: pkgman
+        run: |
+          cache=`[ -f "./pnpm-lock.yaml" ] && echo "pnpm" || ([ -f "./package-lock.json" ] && echo "npm" || ([ -f "./yarn.lock" ] && echo "yarn" || echo ""))`
+          package_manager=`[ ! -z "$cache" ] && echo "$cache" || echo "pnpm"`
+          echo "cache=$cache" >> $GITHUB_OUTPUT
+          echo "package_manager=$package_manager" >> $GITHUB_OUTPUT
+
+      - uses: pnpm/action-setup@v4
+        if: ${{ steps.pkgman.outputs.package_manager == 'pnpm' }}
+        name: Install pnpm
+        id: pnpm-install
+
+      - uses: actions/setup-node@v4
+        with:
+          version: ${{ matrix.node }}
+          cache: ${{ steps.pkgman.outputs.cache }}
+
+      - name: Install dependencies
+        run: ${{ steps.pkgman.outputs.package_manager }} install
+
+      - name: Generate
+        run: npx nuxi build --preset github_pages
+        env:
+          NUXT_CONTENT_PREVIEW_API: https://api.nuxt.studio
+          NUXT_UI_PRO_LICENSE: ${{ secrets.NUXT_UI_PRO_LICENSE }}
+
+      # Deployment job
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ./.output/public
