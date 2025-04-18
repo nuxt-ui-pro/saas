@@ -1,3 +1,12 @@
+<script setup lang="ts">
+import { UCard } from '#components'
+
+defineProps<{
+  reverse?: boolean
+  card?: boolean
+}>()
+</script>
+
 <template>
   <component :is="card ? UCard : 'div'">
     <div class="grid grid-cols-3 items-center w-full gap-x-8">
@@ -10,12 +19,3 @@
     </div>
   </component>
 </template>
-
-<script setup lang="ts">
-import { UCard } from '#components'
-
-defineProps<{
-  reverse?: boolean
-  card?: boolean
-}>()
-</script>
