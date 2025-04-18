@@ -2,10 +2,10 @@
 const { data: page } = await useAsyncData('pricing', () => queryCollection('pricing').first())
 
 useSeoMeta({
-  title: page.value?.title,
-  ogTitle: page.value?.title,
-  description: page.value?.description,
-  ogDescription: page.value?.description
+  title: page.value?.seo?.title || page.value?.title,
+  ogTitle: page.value?.seo?.title || page.value?.title,
+  description: page.value?.seo?.description || page.value?.description,
+  ogDescription: page.value?.seo?.description || page.value?.description
 })
 
 defineOgImageComponent('Saas')
@@ -26,7 +26,10 @@ const items = ref([
 
 <template>
   <div v-if="page">
-    <UPageHero v-bind="page.hero">
+    <UPageHero
+      :title="page.title"
+      :description="page.description"
+    >
       <template #links>
         <UTabs
           v-model="isYearly"

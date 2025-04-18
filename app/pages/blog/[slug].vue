@@ -12,8 +12,8 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
   })
 })
 
-const title = post.value.title
-const description = post.value.description
+const title = post.value.seo?.title || post.value.title
+const description = post.value.seo?.description || post.value.description
 
 useSeoMeta({
   title,

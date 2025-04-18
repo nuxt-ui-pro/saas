@@ -1,6 +1,7 @@
 ---
-title: 'I tested Nuxt UI'
-description: "Nuxt UI is a module that provides a set of Vue components and composables built with Tailwind CSS and Headless UI"
+title: I tested Nuxt UI
+description: Nuxt UI is a module that provides a set of Vue components and
+  composables built with Tailwind CSS and Headless UI
 image:
   src: https://ui.nuxt.com/social-card.png
 authors:
@@ -36,7 +37,6 @@ Its goal is to provide everything related to UI when building a Nuxt app. This i
 1. Install `@nuxt/ui` dependency to your project:
 
 ::code-group
-
 ```bash [pnpm]
 pnpm add @nuxt/ui
 ```
@@ -52,7 +52,6 @@ npm install @nuxt/ui
 ```bash [bun]
 bun add @nuxt/ui
 ```
-
 ::
 
 2. Add it to your `modules` section in your `nuxt.config`:
@@ -108,7 +107,7 @@ You can read more on how to set it up on the [@nuxtjs/tailwindcss](https://tailw
 ### Many options
 
 | Key                   | Default       | Description                                                                                                 |
-|-----------------------|---------------|-------------------------------------------------------------------------------------------------------------|
+| --------------------- | ------------- | ----------------------------------------------------------------------------------------------------------- |
 | `prefix`              | `u`           | Define the prefix of the imported components.                                                               |
 | `global`              | `false`       | Expose components globally.                                                                                 |
 | `icons`               | `['lucide']`  | Icon collections to load.                                                                                   |
@@ -146,7 +145,7 @@ export default defineAppConfig({
 
 As this module uses Tailwind CSS under the hood, you can use any of the [Tailwind CSS colors](https://tailwindcss.com/docs/customizing-colors#color-palette-reference) or your own custom colors. By default, the `primary` color is `green` and the `gray` color is `cool`.
 
-When [using custom colors](https://tailwindcss.com/docs/customizing-colors#using-custom-colors) or [adding additional colors](https://tailwindcss.com/docs/customizing-colors#adding-additional-colors) through the `extend` key in your `tailwind.config.ts`, you'll need to make sure to define all the shades from `50` to `950` as most of them are used in the components config defined in [`ui.config.ts`](https://github.com/nuxt/ui/blob/dev/src/runtime/ui.config.ts). You can [generate your colors](https://tailwindcss.com/docs/customizing-colors#generating-colors) using tools such as https://uicolors.app/ for example.
+When [using custom colors](https://tailwindcss.com/docs/customizing-colors#using-custom-colors) or [adding additional colors](https://tailwindcss.com/docs/customizing-colors#adding-additional-colors) through the `extend` key in your `tailwind.config.ts`, you'll need to make sure to define all the shades from `50` to `950` as most of them are used in the components config defined in [`ui.config.ts`](https://github.com/nuxt/ui/blob/dev/src/runtime/ui.config.ts). You can [generate your colors](https://tailwindcss.com/docs/customizing-colors#generating-colors) using tools such as <https://uicolors.app/> for example.
 
 ### Components
 
@@ -186,7 +185,8 @@ You can find the default classes for each component under the `Config` section.
 
 All the components are styled with dark mode in mind.
 
-:u-color-mode-button
+::u-color-mode-button
+::
 
 ### Icons
 
@@ -203,54 +203,49 @@ Some components have an `icon` prop that allows you to add an icon to the compon
 ## Here are some components you can use... but there are many others !
 
 ::card-group
-  ::card
+  :::card
   ---
+  target: _blank
   title: Accordion
   to: https://ui.nuxt.com/components/accordion
-  target: _blank
   ---
   Display togglable accordion panels.
-  ::
-  ::card
+  :::
+
+  :::card
   ---
+  target: _blank
   title: Carousel
   to: https://ui.nuxt.com/components/carousel
-  target: _blank
   ---
   Display images or content in a scrollable area.
-  ::
-  ::card
+  :::
+
+  :::card
   ---
+  target: _blank
   title: Command Palette
   to: https://ui.nuxt.com/components/command-palette
-  target: _blank
   ---
   Add a customizable command palette to your app.
-  ::
-  ::card
+  :::
+
+  :::card
   ---
+  target: _blank
   title: Popover
   to: https://ui.nuxt.com/components/popover
-  target: _blank
   ---
   Display a non-modal dialog that floats around a trigger element.
-  ::
-  ::card
-  ---
-  title: Range
-  to: https://ui.nuxt.com/components/range
-  target: _blank
-  ---
+  :::
+
+  :::card{target="_blank" title="Range" to="https://ui.nuxt.com/components/range"}
   Display a range field
-  ::
-  ::card
-  ---
-  title: Table
-  to: https://ui.nuxt.com/components/table
-  target: _blank
-  ---
+  :::
+
+  :::card{target="_blank" title="Table" to="https://ui.nuxt.com/components/table"}
   Display data in a table.
-  ::
+  :::
 ::
 
 ## Conclusion

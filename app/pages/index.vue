@@ -3,18 +3,18 @@ const { data: page } = await useAsyncData('index', () => queryCollection('index'
 
 useSeoMeta({
   titleTemplate: '',
-  title: page.value?.title,
-  ogTitle: page.value?.title,
-  description: page.value?.description,
-  ogDescription: page.value?.description
+  title: page.value?.seo?.title || page.value?.title,
+  ogTitle: page.value?.seo?.title || page.value?.title,
+  description: page.value?.seo?.description || page.value?.description,
+  ogDescription: page.value?.seo?.description || page.value?.description
 })
 </script>
 
 <template>
   <div v-if="page">
     <UPageHero
-      :title="page.hero.title"
-      :description="page.hero.description"
+      :title="page.title"
+      :description="page.description"
       :links="page.hero.links"
     >
       <template #top>
