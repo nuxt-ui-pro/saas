@@ -7,7 +7,8 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'Sign up'
+  title: 'Sign up',
+  description: 'Create an account to get started'
 })
 
 const toast = useToast()
