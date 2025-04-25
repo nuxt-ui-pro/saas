@@ -42,7 +42,7 @@ const items = computed(() => [{
       <UButton
         label="Sign in"
         color="neutral"
-        variant="ghost"
+        variant="outline"
         to="/login"
         class="hidden lg:inline-flex"
       />
