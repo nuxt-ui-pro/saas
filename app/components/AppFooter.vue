@@ -54,7 +54,8 @@ function onSubmit() {
     icon="i-simple-icons-nuxtdotjs"
     class="h-px"
   />
-  <UFooter :ui="{ top: 'border-b border-[var(--ui-border)]' }">
+
+  <UFooter :ui="{ top: 'border-b border-default' }">
     <template #top>
       <UContainer>
         <UFooterColumns :columns="columns">
@@ -88,7 +89,7 @@ function onSubmit() {
     </template>
 
     <template #left>
-      <p class="text-(--ui-text-muted) text-sm">
+      <p class="text-muted text-sm">
         Copyright © {{ new Date().getFullYear() }}. All rights reserved.
       </p>
     </template>

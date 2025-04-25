@@ -67,14 +67,14 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
     <template #description>
       Don't have an account? <ULink
         to="/signup"
-        class="text-(--ui-primary) font-medium"
+        class="text-primary font-medium"
       >Sign up</ULink>.
     </template>
 
     <template #password-hint>
       <ULink
         to="/"
-        class="text-(--ui-primary) font-medium"
+        class="text-primary font-medium"
         tabindex="-1"
       >Forgot password?</ULink>
     </template>
@@ -82,7 +82,7 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
     <template #footer>
       By signing in, you agree to our <ULink
         to="/"
-        class="text-(--ui-primary) font-medium"
+        class="text-primary font-medium"
       >Terms of Service</ULink>.
     </template>
   </UAuthForm>
