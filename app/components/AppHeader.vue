@@ -13,7 +13,11 @@ const items = computed(() => [{
   to: '/blog'
 }, {
   label: 'Changelog',
-  to: '/changelog'
+  to: '/changelog',
+  badge: {
+    label: 'New',
+    color: 'primary' as const
+  }
 }])
 </script>
 
