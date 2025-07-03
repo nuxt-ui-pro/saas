@@ -38,8 +38,13 @@ const items = ref([
           v-model="isYearly"
           :items="items"
           color="neutral"
-          class="w-72"
-          :ui="{ list: 'rounded-full', indicator: 'rounded-full' }"
+          size="xs"
+          class="w-48"
+          :ui="{
+            list: 'ring ring-accented rounded-full',
+            indicator: 'rounded-full',
+            trigger: 'w-1/2'
+          }"
         />
       </template>
     </UPageHero>
