@@ -33,26 +33,6 @@ const createImageSchema = () => z.object({
 })
 
 export const collections = {
-  docs: defineCollection({
-    type: 'page',
-    source: '1.docs/**/*'
-  }),
-  posts: defineCollection({
-    type: 'page',
-    source: '3.blog/**/*',
-    schema: z.object({
-      image: z.object({ src: z.string().nonempty().editor({ input: 'media' }) }),
-      authors: z.array(
-        z.object({
-          name: z.string().nonempty(),
-          to: z.string().nonempty(),
-          avatar: z.object({ src: z.string().nonempty().editor({ input: 'media' }) })
-        })
-      ),
-      date: z.date(),
-      badge: z.object({ label: z.string().nonempty() })
-    })
-  }),
   index: defineCollection({
     source: '0.index.yml',
     type: 'page',
@@ -91,6 +71,10 @@ export const collections = {
       })
     })
   }),
+  docs: defineCollection({
+    source: '1.docs/**/*',
+    type: 'page'
+  }),
   pricing: defineCollection({
     source: '2.pricing.yml',
     type: 'page',
@@ -128,5 +112,35 @@ export const collections = {
   blog: defineCollection({
     source: '3.blog.yml',
     type: 'page'
+  }),
+  posts: defineCollection({
+    source: '3.blog/**/*',
+    type: 'page',
+    schema: z.object({
+      image: z.object({ src: z.string().nonempty().editor({ input: 'media' }) }),
+      authors: z.array(
+        z.object({
+          name: z.string().nonempty(),
+          to: z.string().nonempty(),
+          avatar: z.object({ src: z.string().nonempty().editor({ input: 'media' }) })
+        })
+      ),
+      date: z.date(),
+      badge: z.object({ label: z.string().nonempty() })
+    })
+  }),
+  changelog: defineCollection({
+    source: '4.changelog.yml',
+    type: 'page'
+  }),
+  versions: defineCollection({
+    source: '4.changelog/**/*',
+    type: 'page',
+    schema: z.object({
+      title: z.string().nonempty(),
+      description: z.string(),
+      date: z.date(),
+      image: z.string()
+    })
   })
 }
