@@ -20,7 +20,7 @@
     "@standard-schema/spec": "^1.0.0",
     "@vueuse/nuxt": "^13.4.0",
     "better-sqlite3": "^12.2.0",
-    "nuxt": "^3.17.6",
+    "nuxt": "^4.0.0",
     "nuxt-og-image": "^5.1.8",
     "zod": "^3.25.67"
   },
