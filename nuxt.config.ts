@@ -19,10 +19,6 @@ export default defineNuxtConfig({
     '/docs': { redirect: '/docs/getting-started', prerender: false }
   },
 
-  future: {
-    compatibilityVersion: 4
-  },
-
   compatibilityDate: '2024-07-11',
 
   nitro: {
