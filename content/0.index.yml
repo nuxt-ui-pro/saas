@@ -1,15 +1,15 @@
-title: Build your SaaS with Nuxt UI Pro
-description: Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes. It includes all primitives to build landing pages, documentations, blogs, dashboards or entire SaaS products.
+title: Build your SaaS with Nuxt UI
+description: Nuxt UI is a collection of Vue components built on top of Tailwind CSS to create beautiful & responsive Nuxt applications in minutes. It includes all primitives to build landing pages, documentations, blogs, dashboards or entire SaaS products.
 seo:
   title: Nuxt SaaS template
-  description: Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes.
+  description: Nuxt UI is a collection of Vue components built on top of Tailwind CSS to create beautiful & responsive Nuxt applications in minutes.
 navigation: false
 hero:
   links:
     - label: Get started
       icon: i-lucide-arrow-right
       trailing: true
-      to: https://ui.nuxt.com/getting-started/installation/pro/nuxt
+      to: https://ui.nuxt.com/getting-started/installation
       target: _blank
       size: xl
     - label: Use this template
@@ -136,15 +136,15 @@ testimonials:
         avatar:
           src: https://i.pravatar.cc/120?img=14
 cta:
-  title: Start with Nuxt UI Pro today!
-  description: Nuxt UI Pro is free in development, but you need a license to use it in production.
+  title: Start with Nuxt UI today!
+  description: Nuxt UI is open source and free to use.
   links:
-    - label: Buy now
-      to: https://ui.nuxt.com/pro/purchase
+    - label: Get started
+      to: https://ui.nuxt.com/getting-started/installation
       target: _blank
-      icon: i-lucide-shopping-cart
-    - label: License
-      to: https://ui.nuxt.com/getting-started/license
-      trailingIcon: i-lucide-circle-help
+      icon: i-lucide-arrow-right
+    - label: Documentation
+      to: https://ui.nuxt.com
+      trailingIcon: i-lucide-book-open
       target: _blank
       variant: subtle
